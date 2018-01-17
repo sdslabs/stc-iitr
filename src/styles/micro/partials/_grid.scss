@@ -1,0 +1,55 @@
+/*****GRID*****/
+
+$flex-direction-list: row row-reverse column column-reverse;
+$justify-content-list: flex-start flex-end center space-between space-around;
+$align-items-list: flex-start flex-end center baseline stretch;
+
+@each $direction in $flex-direction-list {
+	.flex-direction-#{$direction} {
+		flex-direction: $direction;
+	}
+}
+
+@each $alignment in $justify-content-list {
+	.horizontal-align-#{$direction} {
+		justify-content: $direction;
+	}
+}
+
+@each $alignment in $align-items-list {
+	.vertical-align-#{$direction} {
+		align-items: $direction;
+	}
+}
+
+@media #{$bd-sm} {
+	for $i from 1 through $grid-columns {
+		.col-sm-#{$i} {
+			width: 100% / $i * $grid-columns;
+		}
+	}
+}
+
+@media #{$bd-md} {
+	for $i from 1 through $grid-columns {
+		.col-md-#{$i} {
+			width: 100% / $i * $grid-columns;
+		}
+	}
+}
+
+@media #{$bd-lg} {
+	for $i from 1 through $grid-columns {
+		.col-lg-#{$i} {
+			width: 100% / $i * $grid-columns;
+		}
+	}
+}
+
+@media #{$bd-xl} {
+	for $i from 1 through $grid-columns {
+		.col-xl-#{$i} {
+			width: 100% / $i * $grid-columns;
+		}
+	}
+}

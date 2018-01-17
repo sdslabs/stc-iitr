@@ -1,0 +1,22 @@
+/*****VARIABLES*****/
+
+$root-font-size: if(global-variable-exists(root-font-size), $root-font-size, 0.7320644vw);
+
+
+/*****BREAK POINTS*****/
+
+$bp-sm: 'only screen and (min-width: 768px)';
+$bp-md: 'only screen and (min-width: 992px)';
+$bp-lg: 'only screen and (min-width: 1200px)';
+$bp-xl: 'only screen and (min-width: 1500px)';
+
+/*****GRID*****/
+
+$grid-columns : if( global-variable-exists(grid-columns), $grid-columns, 12 );
+$gutter-width: if( global-variable-exists(gutter-width), $gutter-width, 1.5rem );
+$gutter-fringe-width: if( global-variable-exists(gutter-fringe-width), $gutter-fringe-width, 2rem );
+
+/*****COLORS*****/
+
+
+/*****END OF VARIABLES*****/
