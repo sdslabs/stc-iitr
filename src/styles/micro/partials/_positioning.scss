@@ -1,0 +1,29 @@
+$position-list: absolute relative fixed;
+$display-list: block inline-block inline flex none;
+
+@each $display in $display-list {
+	.display--#{$display} {
+		display: $display;
+	}
+}
+
+@each $position in $position-list {
+	.position--#{$position} {
+		position: $position;
+	}
+}
+
+.wrapper--full-screen {
+	position: fixed !important;
+	width: 100vw;
+	height: 100vh;
+	top: 0; 
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+.element--full-widht {
+	position: absolute;
+	width: 100%;
+}

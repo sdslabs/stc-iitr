@@ -11,43 +11,43 @@ $align-items-list: flex-start flex-end center baseline stretch;
 }
 
 @each $alignment in $justify-content-list {
-	.horizontal-align-#{$direction} {
-		justify-content: $direction;
+	.horizontal-align--#{$alignment} {
+		justify-content: $alignment;
 	}
 }
 
 @each $alignment in $align-items-list {
-	.vertical-align-#{$direction} {
-		align-items: $direction;
+	.vertical-align--#{$alignment} {
+		align-items: $alignment;
 	}
 }
 
-@media #{$bd-sm} {
-	for $i from 1 through $grid-columns {
+@media #{$bp-sm} {
+	@for $i from 1 through $grid-columns {
 		.col-sm-#{$i} {
 			width: 100% / $i * $grid-columns;
 		}
 	}
 }
 
-@media #{$bd-md} {
-	for $i from 1 through $grid-columns {
+@media #{$bp-md} {
+	@for $i from 1 through $grid-columns {
 		.col-md-#{$i} {
 			width: 100% / $i * $grid-columns;
 		}
 	}
 }
 
-@media #{$bd-lg} {
-	for $i from 1 through $grid-columns {
+@media #{$bp-lg} {
+	@for $i from 1 through $grid-columns {
 		.col-lg-#{$i} {
 			width: 100% / $i * $grid-columns;
 		}
 	}
 }
 
-@media #{$bd-xl} {
-	for $i from 1 through $grid-columns {
+@media #{$bp-xl} {
+	@for $i from 1 through $grid-columns {
 		.col-xl-#{$i} {
 			width: 100% / $i * $grid-columns;
 		}

@@ -1,0 +1,31 @@
+nav {
+	height: 8.31rem;
+}
+
+	.nav__head {
+		width: 27.9423rem;	
+	}
+
+	.nav__logo {
+		width: 13.65rem;
+		height: 3.483rem;
+	}
+
+	.nav__element {
+		width: 16.218rem;
+		font-family: Gilroy-Light;
+		font-size: 2rem;
+	}
+
+	.nav__element:hover{
+		background-color: $primary-bg-color;
+	}
+
+	.nav__element:link {
+	text-decoration: none;
+	}
+
+	.nav__element:visited {
+		text-decoration: none;
+		color: black;
+	}

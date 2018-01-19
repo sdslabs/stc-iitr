@@ -15,7 +15,7 @@ module.exports = function(grunt){
           cwd: '<%= stc.src %>',
           dest: '<%= stc.dist %>',
           src: [
-            '**/*.{js,html,ico,png,jpg,jpeg,gif,txt,svg,pdf,css}',
+            '**/*.{js,html,ico,png,jpg,jpeg,gif,txt,svg,pdf,css,ttf,otf}',
             '.htaccess'
           ]
         }]
