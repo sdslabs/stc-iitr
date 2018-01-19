@@ -14,3 +14,6 @@ $font-list-otf: Gilroy-Light;
 		src: url('/fonts/#{$font}.otf') format('truetype');
 	}
 }
+
+// importing montserrat font for footer
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700,800');

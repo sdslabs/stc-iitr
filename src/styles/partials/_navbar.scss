@@ -1,5 +1,6 @@
 nav {
 	height: 8.31rem;
+	margin: 0px;
 }
 
 	.nav__head {
@@ -23,6 +24,7 @@ nav {
 
 	.nav__element:link {
 	text-decoration: none;
+	color: black;
 	}
 
 	.nav__element:visited {
