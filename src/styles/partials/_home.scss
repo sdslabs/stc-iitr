@@ -67,7 +67,7 @@
 			bottom: 23.2496rem;
 			font-size: 2.5rem;
 			color: #1e1e1e;
-			
+
 			i {
 				transition: 0.5s ease;
 			}	
@@ -78,6 +78,12 @@
 		height: 100%;
 		width: 100%;
 		position: fixed;
+		filter: brightness(85%);
+		transition: 0.5s ease;
+	}
+
+	.main-bg--blur {
+		filter: blur(2.5px) brightness(85%);
 	}
 
 	.notices-list--main {
@@ -96,3 +102,26 @@
 			transform: rotate(-180deg);
 		}
 
+	.h-head {
+		position: absolute;
+		bottom: 32rem;
+		left: 14.64rem;
+		z-index:1;
+		color: white;
+		transition: transform 0.5s ease;
+	}
+
+		.h-head-main {
+			font-family: 'Montserrat', sans-serif;
+			font-size: 5rem;
+			font-weight: 800;
+		}
+
+		.h-head-content {
+			margin-top: 2.133rem; 
+			font-family: 'Gilroy-Light';
+		}
+
+	.h-head--disappear {
+		transform: translateX(230%);
+	}

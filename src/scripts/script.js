@@ -4,5 +4,7 @@ $(document).ready(function(){
 		$('.notices-list').toggleClass('notices-list--main')
 		$('.arrow--right>i').toggleClass('arrow--left');
 		$('.h-notice__all').toggleClass('h-notice__all--main');
+		$('.main-bg').toggleClass('main-bg--blur');
+		$('.h-head').toggleClass('h-head--disappear')
 	});
 });
