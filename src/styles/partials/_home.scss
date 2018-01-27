@@ -7,13 +7,16 @@
 		background-color: #1e1e1e;
 		height: 100%;
 		flex-grow: 1;
-		max-width: 50%;
-		position: relative;
+		width: 50%;
+		position: fixed;
+		z-index: 1;
+		transition: 0.5s ease;
 	}
 
 		.h-notice {
 			width: 41.8779rem;
 			// margin-bottom: 7.10999rem;
+			transition: 0.5s ease;
 		}
 
 			.h-notice__number {
@@ -47,12 +50,15 @@
 			text-align: center;
 			width: 41.8779rem;
 			height: 13rem;
+			transition: 0.5s ease;
+
 				a:link, a:visited {
 				color: white;
 				font-family: Gilroy-Bold;	
 			}
 		}
-		.arrow--left {
+
+		.arrow--right {
 			width: 4.9769rem; 
 			height: 4.9769rem; 
 			background-color: $primary-bg-color;
@@ -61,10 +67,32 @@
 			bottom: 23.2496rem;
 			font-size: 2.5rem;
 			color: #1e1e1e;
+			
+			i {
+				transition: 0.5s ease;
+			}	
 		}
+
 	.main-bg {
 		@include dump-bg-image-styles('../../images/main.png');
 		height: 100%;
-		flex-grow: 1;
-		max-width: 50%;
+		width: 100%;
+		position: fixed;
 	}
+
+	.notices-list--main {
+		transform: translateX(-59%);
+	}
+
+		.h-notice--main {
+			margin-right: 30rem;
+		}
+
+		.h-notice__all--main {
+			margin-right: 30rem;
+		}
+
+		.arrow--left {
+			transform: rotate(-180deg);
+		}
+
