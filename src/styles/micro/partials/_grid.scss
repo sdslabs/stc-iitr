@@ -1,7 +1,7 @@
 /*****GRID*****/
 
 $flex-direction-list: row row-reverse column column-reverse;
-$justify-content-list: flex-start flex-end center space-between space-around;
+$justify-content-list: flex-start flex-end center space-between space-around space-evenly;
 $align-items-list: flex-start flex-end center baseline stretch;
 
 @each $direction in $flex-direction-list {

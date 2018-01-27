@@ -1,0 +1,70 @@
+.wrapper--home {
+	width: 100%;
+	height: 100%;
+}
+
+	.notices-list {
+		background-color: #1e1e1e;
+		height: 100%;
+		flex-grow: 1;
+		max-width: 50%;
+		position: relative;
+	}
+
+		.h-notice {
+			width: 41.8779rem;
+			// margin-bottom: 7.10999rem;
+		}
+
+			.h-notice__number {
+				font-size: 4.9059rem;
+				font-family: 'Gilroy-Bold';
+				color: $primary-bg-color;
+				letter-spacing: 3px;
+				width: 16rem;
+
+				div {
+					width: 100%;
+					border-right: 1px solid $primary-bg-color;
+				}
+			}
+
+			.h-notice__content {
+				color: white;
+				font-family: 'Gilroy-Light';
+				line-height: 2.644rem;
+				letter-spacing: 1px;
+				padding-left: 3.1284rem;
+			}
+
+				.h-notice__date {
+					color: $primary-bg-color;
+					font-family: Gilroy-Light;
+					margin-top: 1.7rem;
+				}
+			
+		.h-notice__all {
+			text-align: center;
+			width: 41.8779rem;
+			height: 13rem;
+				a:link, a:visited {
+				color: white;
+				font-family: Gilroy-Bold;	
+			}
+		}
+		.arrow--left {
+			width: 4.9769rem; 
+			height: 4.9769rem; 
+			background-color: $primary-bg-color;
+			position: absolute;
+			right: 0;
+			bottom: 23.2496rem;
+			font-size: 2.5rem;
+			color: #1e1e1e;
+		}
+	.main-bg {
+		@include dump-bg-image-styles('../../images/main.png');
+		height: 100%;
+		flex-grow: 1;
+		max-width: 50%;
+	}
