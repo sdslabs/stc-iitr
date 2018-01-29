@@ -4,11 +4,11 @@
 }
 
 
-.wrapper--equipments {
+.wrapper--projects {
 
 }
 
-	.equipments__head {
+	.projects__head {
 		width: 93.1409rem;
 		font-family : 'Gilroy-Light';
 		color: rgba(0,0,0,0.7);
@@ -16,22 +16,22 @@
 		line-height: 2.844rem;
 	}
 
-	.wrapper--equipment__card {
+	.wrapper--project__card {
 		width: 93.1409rem;
 		margin-bottom: 8.0342rem;
 	}
 
-		.equipment__card {
+		.project__card {
 			flex:1;	
 		}
 
-		.equipment__head {
+		.project__head {
 			font-family: 'Gilroy-Bold';
 			border-left: 3px solid $primary-bg-color;
 			padding-left: 1.9197rem;
 		}
 
-		.equipment__content {
+		.project__content {
 			@extend %set-padding;
 			font-family: 'Gilroy-Light';
 			color: rgba(0,0,0,0.7);
@@ -40,22 +40,22 @@
 			border-left: 3px solid $primary-bg-color;
 		}
 		
-		.wrapper--equipments__link {
+		.wrapper--projects__link {
 			position: relative;	
 
 			&:hover {
-				.equipment__link--border {
+				.project__link--border {
 					height: 100%;
 				}
 
-				a.equipment__link {
+				a.project__link {
 					color: #585858;
 				}
 			}
 			
 		}
 
-			a.equipment__link {
+			a.project__link {
 				@extend %set-padding;
 
 				transition: color 0.5s ease;
@@ -66,7 +66,7 @@
 					color: $primary-bg-color;
 				}
 			}
-				.equipment__link--border {
+				.project__link--border {
 					transition: height 0.5s ease;
 					border-left: 3px solid $primary-bg-color;
 					position: absolute;
