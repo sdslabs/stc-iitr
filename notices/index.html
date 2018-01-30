@@ -7,7 +7,7 @@ layout: default
 	<div class="notices__element notices__element--head display--flex vertical-align--center">
 		<h1> NOTICES </h1>
 	</div>
-	{% assign notices = site.notices | sort 'date' | reverse %}
+	{% assign notices = site.notices | sort: 'date' | reverse %}
 	{% for notice in notices %}
 		<div class="notices__element notices--notice display--flex">
 			<div class="notice--number h1--small"> 

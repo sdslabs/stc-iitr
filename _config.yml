@@ -22,3 +22,8 @@ sass:
 
 collections: 
   - notices
+  - projects
+  - achievements
+  - awards
+  - groups
+  - equipments

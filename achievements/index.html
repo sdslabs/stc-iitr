@@ -7,42 +7,20 @@ layout: default
 		<div class="h1--smaller achievements__head--active"> RECENT </div>
 		<div class="h1--smaller achievements__head--awards"> AWARDS </div>
 	</div>	
-	<div class="achievement__card display--flex">
-		<div class="achievement__image">
-			<img src="../../images/achievements1.png">
-		</div>
-		<div class="achievement__info">
-			<div class="achievement__head h1--smaller">
-				IIT Roorkee grabs runner up spot in tech meet
+	{% assign achievements = site.achievements | sort:'date' | reverse %}
+	{% for achievement in achievements %}
+		<div class="achievement__card display--flex">
+			<div class="achievement__image">
+				<img src="../..{{ achievement.image }}">
 			</div>
-			<div class="achievement__content h3--small">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	
-			</div>
-		</div>
-	</div>
-	<div class="achievement__card display--flex">
-		<div class="achievement__image">
-			<img src="../../images/achievements1.png">
-		</div>
-		<div class="achievement__info">
-			<div class="achievement__head h1--smaller">
-				IIT Roorkee grabs runner up spot in tech meet
-			</div>
-			<div class="achievement__content h3--small">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo				</div>
-		</div>
-	</div>
-	<div class="achievement__card display--flex">
-		<div class="achievement__image">
-			<img src="../../images/achievements1.png">
-		</div>
-		<div class="achievement__info">
-			<div class="achievement__head h1--smaller">
-				IIT Roorkee grabs runner up spot in tech meet
-			</div>
-			<div class="achievement__content h3--small">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	
+			<div class="achievement__info">
+				<div class="achievement__head h1--smaller">
+					{{ achievement.title }}
+				</div>
+				<div class="achievement__content h3--small">
+					{{ achievement.content }}
+				</div>
 			</div>
 		</div>
-	</div>
+	{% endfor %}
 </div>
