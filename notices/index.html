@@ -7,64 +7,26 @@ layout: default
 	<div class="notices__element notices__element--head display--flex vertical-align--center">
 		<h1> NOTICES </h1>
 	</div>
+	{% assign notices = site.notices | sort 'date' | reverse %}
+	{% for notice in notices %}
+		<div class="notices__element notices--notice display--flex">
+			<div class="notice--number h1--small"> 
+					{% if forloop.index < 10 %}
+						<div class="number__text"> 0{{ forloop.index }} </div>
+					{% else %}
+						<div class="number__text"> {{ forloop.index }} </div>
+					{% endif %}
 
-	<div class="notices__element notices--notice display--flex">
-		<div class="notice--number h1--small"> 
-			<div class="number__text"> 01 </div>
-		</div>
-		<div class="notice--content h1--smaller"> 
-			<div class="content__text">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
 			</div>
-			<div class="content__link h1--smaller">
-				<a href="#"> View Details </a>
+			<div class="notice--content h1--smaller"> 
+				<div class="content__text">
+					{{ notice.content }}
+				</div>
+				<div class="content__link h1--smaller">
+					<a href="#"> View Details </a>
+				</div>
 			</div>
+			<div class="notice--date h1--smaller"> {{ notice.date | date: '%b %d' }} </div>
 		</div>
-		<div class="notice--date h1--smaller"> Dec 29 </div>
-	</div>
-	
-	<div class="notices__element notices--notice display--flex">
-		<div class="notice--number h1--small"> 
-			<div class="number__text"> 02 </div>
-		</div>
-		<div class="notice--content h1--smaller"> 
-			<div class="content__text">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate vel
-			</div>
-			<div class="content__link h1--smaller">
-				<a href="#"> View Details </a>
-			</div>
-		</div>
-		<div class="notice--date h1--smaller"> Dec 29 </div>
-	</div>
-
-	<div class="notices__element notices--notice display--flex">
-		<div class="notice--number h1--small"> 
-			<div class="number__text"> 03 </div>
-		</div>
-		<div class="notice--content h1--smaller"> 
-			<div class="content__text">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
-			</div>
-			<div class="content__link h1--smaller">
-				<a href="#"> View Details </a>
-			</div>
-		</div>
-		<div class="notice--date h1--smaller"> Dec 29 </div>
-	</div>
-
-	<div class="notices__element notices--notice display--flex">
-		<div class="notice--number h1--small"> 
-			<div class="number__text"> 04 </div>
-		</div>
-		<div class="notice--content h1--smaller"> 
-			<div class="content__text">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate vel
-			</div>
-			<div class="content__link h1--smaller">
-				<a href="#"> View Details </a>
-			</div>
-		</div>
-		<div class="notice--date h1--smaller"> Dec 29 </div>
-	</div>
+	{% endfor %}
 </div>

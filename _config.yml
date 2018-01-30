@@ -19,3 +19,6 @@ markdown: kramdown
 #sass directory
 sass:
     sass_dir: _sass
+
+collections: 
+  - notices
