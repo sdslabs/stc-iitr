@@ -1,5 +1,5 @@
 nav {
-	height: 8.31rem;
+	height: 7.51rem;
 	margin: 0px;
 }
 
@@ -8,14 +8,16 @@ nav {
 	}
 
 	.nav__logo {
-		width: 13.65rem;
-		height: 3.483rem;
+		width: 12.05rem;
+		height: 3.083rem;
 	}
 
 	.nav__element {
 		width: 16.218rem;
 		font-family: Gilroy-Light;
-		font-size: 2rem;
+		h3 {
+			font-size: 1.2rem !important;
+		}
 	}
 
 	.nav__element:hover{
