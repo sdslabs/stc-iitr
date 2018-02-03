@@ -1,6 +1,8 @@
 nav {
 	height: 7.51rem;
 	margin: 0px;
+	position: fixed;
+	z-index: 999;
 }
 
 	.nav__head {
@@ -27,6 +29,7 @@ nav {
 	.nav__element:link {
 	text-decoration: none;
 	color: black;
+	background-color:white;
 	}
 
 	.nav__element:visited {
