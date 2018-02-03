@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div class="wrapper--achievements">
+	<div class="achievements__head display--flex vertical-align--center">
+		<div class="h1--smaller achievements__head--active"> RECENT </div>
+		<div class="h1--smaller achievements__head--awards"> AWARDS </div>
+	</div>	
+	{% assign achievements = site.achievements | sort:'date' | reverse %}
+	{% for achievement in achievements %}
+		<div class="achievement__card display--flex">
+			<div class="achievement__image">
+				<img src="../..{{ achievement.image }}">
+			</div>
+			<div class="achievement__info">
+				<div class="achievement__head h1--smaller">
+					{{ achievement.title }}
+				</div>
+				<div class="achievement__content h3--small">
+					{{ achievement.content }}
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+</div>

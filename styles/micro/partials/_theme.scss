@@ -1,0 +1,26 @@
+//setting responsive root font sizes
+
+html {
+	font-size: $root-font-size;
+}
+
+@media #{$bp-sm} {
+	html {
+		font-size: $root-font-size-responsive;
+	}
+}
+
+@media #{$bp-xl} {
+	html {
+		font-size: $root-font-size-large;
+	}
+}
+
+.background--primary {
+	background-color: $primary-bg-color;
+}
+
+.link--active {
+	background-color: $primary-bg-color;
+	font-family: 'Gilroy-Bold' !important;
+}

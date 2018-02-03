@@ -1,0 +1,25 @@
+footer {
+	bottom: 0;
+	right: 0;
+	width: 23.676299999999998rem;
+	height: 5.4747rem;
+}
+
+	.footer__head {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 900;
+		flex-grow: 2;
+	}
+
+	.footer__head h3{
+		text-align: center;
+	}
+
+	.footer__image {
+		// flex-grow: 1;
+	}
+
+	.footer__link, .footer__link:visited, .footer__link:link {
+		flex-grow: 1;
+		color: black;
+	}

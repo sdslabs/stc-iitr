@@ -1,0 +1,38 @@
+nav {
+	height: 7.51rem;
+	margin: 0px;
+	position: fixed;
+	z-index: 999;
+}
+
+	.nav__head {
+		width: 27.9423rem;	
+	}
+
+	.nav__logo {
+		width: 12.05rem;
+		height: 3.083rem;
+	}
+
+	.nav__element {
+		width: 16.218rem;
+		font-family: Gilroy-Light;
+		h3 {
+			font-size: 1.2rem !important;
+		}
+	}
+
+	.nav__element:hover{
+		background-color: $primary-bg-color;
+	}
+
+	.nav__element:link {
+	text-decoration: none;
+	color: black;
+	background-color:white;
+	}
+
+	.nav__element:visited {
+		text-decoration: none;
+		color: black;
+	}

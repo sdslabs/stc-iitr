@@ -1,0 +1,47 @@
+.wrapper--achievements{
+	margin-left: 14.5755rem;
+	padding-top: 7.51rem;
+}
+
+	.achievements__head {
+		width: 92.7144rem;
+		padding:  7.60769rem 0;
+		font-family: Gilroy-Light;
+		color: rgba(0, 0, 0, 0.5);
+	}		
+
+	.achievements__head--awards {
+		margin-left: 3.1284rem; 
+	}
+
+	.achievements__head--active {
+		font-weight: 900;
+		color: black;
+	}
+
+	.achievement__card {
+		margin-bottom: 6.68340rem;
+	}
+
+	.achievement__info {
+		width: 58.5863rem;
+		margin-left: 2.41739rem;
+	}
+
+		.achievement__image img{
+			width: 29.2221rem;
+			height: 17.9172rem;
+		}
+
+		.achievement__head {
+			font-family: Gilroy-Light;
+			font-weight: 900;
+		}
+
+		.achievement__content {
+			line-height: 2.133rem;
+			color: rgba(0, 0, 0, 0.77);
+			margin-top: 2.844rem;
+			border-left: 3px solid $primary-bg-color;
+			padding-left: 1.8486rem;
+		}
