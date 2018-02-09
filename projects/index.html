@@ -7,19 +7,15 @@ layout: default
 		Lorem ipsum dolor sit amet, consecte adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. lorem ipsum dolor simit amet conscete 
 	</div>
 		
+	<div class="wrapper--project__card display--flex">
 	{% assign projects = site.projects | sort: 'date' | reverse %}
 	{% for project in projects %}
 		{% assign isOdd = forloop.index | modulo:2 %}
-		{% assign index = forloop.index | minus: 1%}
-		{% assign indexPlus1 = forloop.index %}
-		{% if isOdd == 1 %}
-		<div class="wrapper--project__card display--flex">
-			{% if index < projects.size %}
 				<div class="project__card">
 					<div class="project__head h1--smaller">
-						{{ projects[index].title | upcase }}
+						{{ project.title | upcase }}
 					</div>
-					<div class="project__content"> {{ projects[index].description}} </div>
+					<div class="project__content"> {{ project.description}} </div>
 					<div class="wrapper--projects__link">
 						<div class="project__link--border"> </div>
 						<a class="project__link h2--large display--block" href="#">
@@ -27,22 +23,9 @@ layout: default
 						</a>
 					</div>
 				</div>
-			{% endif %}
-			{% if indexPlus1 < projects.size %}
-				<div class="project__card">
-					<div class="project__head h1--smaller">
-						{{ projects[indexPlus1].title | upcase }}
-					</div>
-					<div class="project__content"> {{ projects[indexPlus1].description}} </div>
-					<div class="wrapper--projects__link">
-						<div class="project__link--border"> </div>
-						<a class="project__link h2--large display--block" href="#">
-							VIEW DETAILS
-						</a>
-					</div>
-				</div>
-			{% endif %}
+		{% if isOdd == 0 %}
 			</div>
+			<div class="wrapper--project__card display--flex">
 		{% endif %}
 	{% endfor %}
 </div>
