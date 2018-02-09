@@ -8,52 +8,24 @@ layout: default
 		<div class="groups__description h1--smaller"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco  </div>
 	</div>
 
+	{% assign groups = site.groups %}
 	<div class="display--flex horizontal-align--space-between group-cards">
+	{% for group in groups %}
+		{% assign isFourMultiple = forloop.index | modulo:4 %}
 		<div class="group-card">
 			<a href="#" class="group-card-hover display--flex horizontal-align--center vertical-align--center">
 				<h2> VIEW MORE </h2>
 			</a>
 			<div class="group-card__name display--flex vertical-align--center"> 
-				<h2> DESIGN STUDIO </h2> 
+				<h2> {{ group.name | upcase }} </h2> 
 			</div>
-			<img class="group-card__img" src="../images/groups-ds.png">
+			<img class="group-card__img" src="..{{group.image}}">
 		</div>
-		<div class="group-card">
-			<a href="#" class="group-card-hover display--flex horizontal-align--center vertical-align--center">
-				<h2> VIEW MORE </h2>
-			</a>
-			<div class="group-card__name display--flex vertical-align--center"> 
-				<h2> DESIGN STUDIO </h2> 
+		{% if isFourMultiple==0 %}
 			</div>
-			<img class="group-card__img" src="../images/groups-ds.png">
-		</div>
-		<div class="group-card">
-			<a href="#" class="group-card-hover display--flex horizontal-align--center vertical-align--center">
-				<h2> VIEW MORE </h2>
-			</a>
-			<div class="group-card__name display--flex vertical-align--center"> 
-				<h2> DESIGN STUDIO </h2> 
-			</div>
-			<img class="group-card__img" src="../images/groups-ds.png">
-		</div>
-		<div class="group-card">
-			<a href="#" class="group-card-hover display--flex horizontal-align--center vertical-align--center">
-				<h2> VIEW MORE </h2>
-			</a>
-			<div class="group-card__name display--flex vertical-align--center"> 
-				<h2> DESIGN STUDIO </h2> 
-			</div>
-			<img class="group-card__img" src="../images/groups-ds.png">
-		</div>
-	</div>
-	<div class="display--flex horizontal-align--space-between group-cards">
-		<div class="group-card">
-		</div>
-		<div class="group-card">
-		</div>
-		<div class="group-card">
-		</div>
-		<div class="group-card">
-		</div>
-	</div>
+			<div class="display--flex horizontal-align--space-between group-cards">
+		{% endif %}
+	{% endfor %}
+
+	
 </div>
