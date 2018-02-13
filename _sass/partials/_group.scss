@@ -102,3 +102,100 @@
 
 	.group-full {
 	}
+		.g-project-head {
+			padding: 7.1099rem 0;
+			font-size: 3.412rem;	
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 900;
+			width: 105.296rem;
+			letter-spacing: 1.8px;
+		}
+
+		.g-project-row {
+			width: 105.296rem;
+			margin-bottom: 7.5366rem;
+		}
+
+			.g-card__image {
+				img {
+					width: 22.041rem;
+				}
+			}
+
+			.g-card__data {
+				width: 19.197rem;
+				margin-left: 2.2752rem;
+			}
+
+				.g-card__head {
+					font-family: 'Gilroy-Bold';
+					letter-spacing: 1px;
+				}
+
+				.g-card__content {
+					color: #585858;
+					font-family: 'Gilroy-Light';
+					letter-spacing: 0.8px;
+					line-height: 2.1041rem;
+				}
+
+				.g-card__link {
+
+					a {
+						text-decoration: none;
+						font-family: 'Montserrat', sans-serif;
+						font-weight: 600;
+						color: $primary-bg-color;
+					}
+				}
+
+		.g-equipment-head {
+			font-size: 3.412rem;	
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 900;
+			width: 105.296rem;
+			margin-top: 4.266rem;
+			letter-spacing: 1.8px;
+		}
+
+		.g-equipment__list {
+			width: 105.296rem;
+			margin-top: 2.48849rem;
+		}
+
+			.g-equipment__item {
+				font-size: 1.5rem;
+			}
+	
+		.g-recruitments-head {
+			font-size: 3.412rem;	
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 900;
+			width: 105.296rem;
+			margin-top: 8.566rem;
+			letter-spacing: 1.8px;
+		}
+
+		.g-recruitments-content {
+			width: 105.296rem;
+			font-family: 'Gilroy-Light';
+			font-size: 1.7rem;	
+			line-height: 2.844rem;
+			color: #585858;
+			margin-top: 3.1994rem;
+		}
+
+		.g-recruitments-link {
+			width: 105.296rem;
+			margin-top: 5.3325rem;
+			margin-bottom: 10rem;
+
+			a {
+				text-decoration: none;
+				color: $primary-bg-color;
+				text-decoration: none;
+				font-family: 'Montserrat', sans-serif;
+				font-weight: 600;
+				font-size: 2.55rem;
+			}
+		}
