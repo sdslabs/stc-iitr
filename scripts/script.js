@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 	$('.arrow--right').click(function(){
 		$('.h-notice').toggleClass('h-notice--main');
 		$('.notices-list').toggleClass('notices-list--main')
@@ -7,4 +8,5 @@ $(document).ready(function(){
 		$('.main-bg').toggleClass('main-bg--blur');
 		$('.h-head').toggleClass('h-head--disappear')
 	});
+
 });
