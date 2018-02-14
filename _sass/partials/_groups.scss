@@ -79,3 +79,34 @@
 			transition: opacity 0.2s ease;
 			z-index: 1;
 		}
+	
+	.scroll-down {
+		position: fixed;
+		bottom: 0;
+		color: white; 
+		background-color: black;
+		width: 27.9423rem;
+		right: 40%;
+		font-size: 1.7064rem;
+		height: 5.4035rem;
+		z-index: 1;
+		transition: bottom 1s ease;
+		cursor: pointer;
+
+			div {
+				width: 23.10749rem;
+				font-family: 'Gilroy-Light';
+			}
+
+			.arrow-dw {
+				font-size: 2.2rem;
+				flex: 1;
+				font-weight: 500;
+				background: $primary-bg-color;
+				color: black;
+			}
+	}
+
+	.hidden-arrow {
+		bottom: -6rem;
+	}
