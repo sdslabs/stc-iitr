@@ -8,5 +8,5 @@ $(document).ready(function(){
 		$('.main-bg').toggleClass('main-bg--blur');
 		$('.h-head').toggleClass('h-head--disappear')
 	});
-
+	
 });
