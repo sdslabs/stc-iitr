@@ -1,149 +1,122 @@
 ---
 layout: default
 ---
+{% assign groups = site.groups %}
 
 <div class="wrapper--group">
-	<div class="group-front display--flex horizontal-align--center" id="group-front">
-		<div class="front__left-leaf display--flex vertical-align--center horizontal-align--center flex-direction-column">
-			<div class="front__paginate">
-				<h2> 1 of 5 
-					<a href="#"> < </a>
-					<a href="#">  > </a>
-				</h2>
-			</div>
-			<div class="front__head">
-				<h1> DESIGN STUDIO </h1>
-				<div class="front__sub-head">
-					<h2> lorem ipsum dolor sit amet </h2>
+{% for group in groups %}
+	<div class="g-{{group.tag}} g-group" id="group-{{forloop.index}}">
+		<div class="group-front display--flex horizontal-align--center" id="group-front">
+			<div class="front__left-leaf display--flex vertical-align--center horizontal-align--center flex-direction-column">
+				<div class="front__paginate">
+					<h2> {{forloop.index}} of {{forloop.length}}
+						<a href="#"> < </a>
+						<a href="#">  > </a>
+					</h2>
+				</div>
+				<div class="front__head">
+					<h1> {{ group.name }}</h1>
+					<div class="front__sub-head">
+						<h2> {{ group.excerpt }} </h2>
+					</div>
+				</div>
+				<div class="front__content">
+					{{ group.content }}
+				</div>
+				<div class="front__contact">
+					<div class="front__contact--name h2--large">
+						{{ group.contact }}
+					</div>
+					<div class="front__contact--info">
+						 {{ group.phoneno }}
+					</div>
+					<div class="front__contact--links"> 
+						<a href="#"> <i class="fa fa-facebook"> </i> </a>
+						<a href="#"> <i class="fa fa-behance"> </i> </a>
+						<a href="#"> <i class="fa fa-twitter"> </i> </a>
+					</div>
 				</div>
 			</div>
-			<div class="front__content">
-				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
-			</div>
-			<div class="front__contact">
-				<div class="front__contact--name h2--large">
-					Vaibhav Rawat
-				</div>
-				<div class="front__contact--info">
-					9990447200
-				</div>
-				<div class="front__contact--links"> 
-					<a href="#"> <i class="fa fa-facebook"> </i> </a>
-					<a href="#"> <i class="fa fa-behance"> </i> </a>
-					<a href="#"> <i class="fa fa-twitter"> </i> </a>
-				</div>
+			<div class="front__image">
+				<img src="../images/{{ group.image }}">
 			</div>
 		</div>
-		<div class="front__image">
-			<img src="../images/main.png">
+
+		<div class="group-full display--flex vertical-align--center horizontal-align--center flex-direction-column">
+			<div class="g-project-head">
+				PROJECTS
+			</div>
+
+			<div class="g-project-row display--flex horizontal-align--space-between">
+
+			{% assign projects = site.projects %}
+			{% for project in projects %}
+
+			{% assign isOdd = forloop.index | modulo:2 %}
+			{% if project.group == group.name %}
+				<div class="g-card display--flex">
+					<div class="g-card__image">
+						<img data-echo="../images/{{project.image}}">
+					</div>
+					<div class="g-card__data display--flex flex-direction-column horizontal-align--space-around">
+						<div class="g-card__head h1--smaller">
+							{{ project.title }}
+						</div>
+						<div class="g-card__content h3--small">
+							{{ project.content }}
+						</div>
+						<div class="g-card__link">
+							<a href="#" class="h2--large"> View Details </a>
+						</div>
+					</div>
+				</div>
+				{% if isOdd == 0 %}
+					</div>
+					<div class="g-project-row display--flex horizontal-align--space-between">	
+				{% endif %}	
+			{% endif %}
+			{% endfor %}
+			</div>
+
+
+			<div class="g-equipment-head">
+				EQUIPMENT
+			</div>
+			
+			{% assign equipments = group.equipments %}
+			<div class="equipment__list g-equipment__list display--flex flex-direction-column">		
+				<div class="equipment__list">	
+				{% for equipment in equipments %}
+					<div class="equipment__list--item display--flex vertical-align--center"> 
+						<i class="fa fa-circle" aria-hidden="true"></i>
+						<span class="g-equipment__item"> {{ equipment }} </span> 
+					</div>
+				{% endfor %}
+				</div>
+			</div>
+
+			
+			<div class="g-recruitments-head">
+				RECRUITMENTS 
+			</div>
+			<div class="g-recruitments-content">
+				{{ group.recruitment }} 
+			</div>
+			<div class="g-recruitments-link">
+				<a href="#"> Apply Now </a>
+			</div>
 		</div>
 	</div>
 
-	<div class="group-full display--flex vertical-align--center horizontal-align--center flex-direction-column">
-		<div class="g-project-head">
-			PROJECTS
-		</div>
-		<div class="g-project-row display--flex horizontal-align--space-between">
-			<div class="g-card display--flex">
-				<div class="g-card__image">
-					<img src="../images/achievements1.png">
-				</div>
-				<div class="g-card__data display--flex flex-direction-column horizontal-align--space-around">
-					<div class="g-card__head h1--smaller">
-						Plan et
-					</div>
-					<div class="g-card__content h3--small">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel tortor nisi. 
-					</div>
-					<div class="g-card__link">
-						<a href="#" class="h2--large"> View Details </a>
-					</div>
-				</div>
-			</div>
-			<div class="g-card display--flex">
-				<div class="g-card__image">
-					<img src="../images/achievements1.png">
-				</div>
-				<div class="g-card__data display--flex flex-direction-column horizontal-align--space-around">
-					<div class="g-card__head h1--smaller">
-						Plan et
-					</div>
-					<div class="g-card__content h3--small">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel tortor nisi. 
-					</div>
-					<div class="g-card__link">
-						<a href="#" class="h2--large"> View Details </a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="g-project-row display--flex horizontal-align--space-between">
-			<div class="g-card display--flex">
-				<div class="g-card__image">
-					<img src="../images/achievements1.png">
-				</div>
-				<div class="g-card__data display--flex flex-direction-column horizontal-align--space-around">
-					<div class="g-card__head h1--smaller">
-						Plan et
-					</div>
-					<div class="g-card__content h3--small">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel tortor nisi. 
-					</div>
-					<div class="g-card__link">
-						<a href="#" class="h2--large"> View Details </a>
-					</div>
-				</div>
-			</div>
-			<div class="g-card display--flex">
-				<div class="g-card__image">
-					<img src="../images/achievements1.png">
-				</div>
-				<div class="g-card__data display--flex flex-direction-column horizontal-align--space-around">
-					<div class="g-card__head h1--smaller">
-						Plan et
-					</div>
-					<div class="g-card__content h3--small">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel tortor nisi. 
-					</div>
-					<div class="g-card__link">
-						<a href="#" class="h2--large"> View Details </a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="g-equipment-head">
-			EQUIPMENT
-		</div>
-		<div class="equipment__list g-equipment__list display--flex flex-direction-column">	
-			<div class="equipment__list--item display--flex vertical-align--center"> 
-					<i class="fa fa-circle" aria-hidden="true"></i>
-					<span class="g-equipment__item"> i MAC </span> 
-			</div>
-			<div class="equipment__list--item display--flex vertical-align--center"> 
-					<i class="fa fa-circle" aria-hidden="true"></i>
-					<span class="g-equipment__item"> Work Station </span> 
-			</div>
-			<div class="equipment__list--item display--flex vertical-align--center"> 
-					<i class="fa fa-circle" aria-hidden="true"></i>
-					<span class="g-equipment__item"> Virtual Reality Content </span> 
-			</div>
-		</div>
-		<div class="g-recruitments-head">
-			RECRUITMENTS 
-		</div>
-		<div class="g-recruitments-content">
-			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. <br>
-			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
-		</div>
-		<div class="g-recruitments-link">
-			<a href="#"> Apply Now </a>
-		</div>
-	</div>
 
-	<div class="scroll-down hidden-arrow display--flex">
-		<div class="scroll-down__text display--flex vertical-align--center horizontal-align--center"> Scroll Down For Projects </div>
-		<div class="arrow-dw display--flex vertical-align--center horizontal-align--center"> &darr; </div>
-	</div>
+{% endfor %}
 </div>
+
+<div class="scroll-down hidden-arrow display--flex">
+	<div class="scroll-down__text display--flex vertical-align--center horizontal-align--center"> Scroll Down For Projects </div>
+	<div class="arrow-dw display--flex vertical-align--center horizontal-align--center"> &darr; </div>
+</div>
+
+
 
 <script type="text/javascript" src="/scripts/group.js"></script>
