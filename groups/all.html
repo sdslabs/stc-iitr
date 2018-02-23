@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<div class="wrapper--groups flex-direction-column display--flex vertical-align--center horizontal-align--center">
+	<div class="groups__head">
+		<h1> GROUPS </h1>
+		<div class="groups__description h1--smaller"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco  </div>
+	</div>
+
+	{% assign groups = site.groups %}
+	<div class="display--flex horizontal-align--space-between group-cards">
+	{% for group in groups %}
+		{% assign isFourMultiple = forloop.index | modulo:4 %}
+		<div class="group-card">
+			<a href="/groups/{{ group.tag }}" class="group-card-hover display--flex horizontal-align--center vertical-align--center">
+				<h2> VIEW MORE </h2>
+			</a>
+			<div class="group-card__name display--flex vertical-align--center"> 
+				<h2> {{ group.name | upcase }} </h2> 
+			</div>
+			<img class="group-card__img" data-echo="../images/{{group.image}}">
+		</div>
+		{% if isFourMultiple==0 %}
+			</div>
+			<div class="display--flex horizontal-align--space-between group-cards">
+		{% endif %}
+	{% endfor %}
+
+</div>

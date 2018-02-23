@@ -33,6 +33,86 @@ $(document).ready(function() {
 		lastScrollTop = st;
 	}
 
-	
+	/* GROUP CYCLE HANDLING */
+
+	var url = document.location.pathname; 
+	var path = url.split('/')[2];
+
+	// array of all group tags
+	var groups = [
+		'sdslabs', 
+		'designstudio',
+	];
+
+	function matchGroup(path){
+		var found = 0;
+		for(index in groups){
+			if (groups[index] == path){
+				found =	1; 
+				tempURL = '/groups/'+ groups[index]; 
+				if( tempURL != document.location.pathname){ 
+					window.history.pushState(null,null,groups[index]);
+				}
+				updateGroup(path);
+				break;
+			}
+		}
+
+		if(found == 0){
+			var randomIndex = Math.floor(Math.random()	* groups.length);
+			matchGroup(groups[randomIndex]);
+		}
+	}
+
+	function updateGroup(path){
+		groups.forEach(function(group,index){
+			if(group != path){
+				var groupContainer = document.getElementById(group);
+				groupContainer.classList.add('invisible')
+			}		
+		});
+		var currentGroup = document.getElementById(path);
+		currentGroup.classList.remove('invisible');
+		currentGroup.classList.add('visible');
+	}
+
+	// next and previous handling
+
+	$('.next').click(function(e){
+		e.preventDefault();
+
+		var currentPath = document.location.pathname.split('/')[2];
+		for(index in groups){
+			if(groups[index] == currentPath){
+				var nextIndex = (parseInt(index)+1)%groups.length;
+				console.log(index);
+				matchGroup(groups[nextIndex]);
+				break;
+			}
+		}
+	});
+
+	$('.previous').click(function(e){
+		e.preventDefault();
+
+		var currentPath = document.location.pathname.split('/')[2];
+		for(index in groups){
+			if(groups[index] == currentPath){
+				var tempIndex = parseInt(index)-1;
+				var nextIndex = (tempIndex!=-1)?tempIndex:groups.length-1;
+				console.log(index);
+				matchGroup(groups[nextIndex]);
+				break;
+			}
+		}
+	});
+
+	// handling changes in states 
+
+	window.onpopstate = function(){
+		matchGroup(document.location.pathname.split('/')[2]);
+	}
+
+	matchGroup(path);
 
 });
