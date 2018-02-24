@@ -9,6 +9,11 @@ footer {
 		font-family: 'Montserrat', sans-serif;
 		font-weight: 900;
 		flex-grow: 2;
+
+		&:active, &:visited, &:link {
+			text-decoration: none;
+			color: black;
+		}
 	}
 
 	.footer__head h3{

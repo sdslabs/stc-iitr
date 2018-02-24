@@ -27,5 +27,6 @@ collections:
   - awards
   - groups
   - equipments
+  - council
 
 include: [.htaccess]

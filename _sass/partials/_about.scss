@@ -1,0 +1,53 @@
+.wrapper--about {
+	padding-top: 7.51rem;	
+}
+
+	.about__row {
+		width: 107.21879999999999rem;
+		margin-top: 5.414599999999999rem;
+	}
+
+	.about__head {
+		margin-top: 6.11rem;
+		font-family: 'Montserrat', sans-serif;
+	}
+
+	.about__head--description {
+		font-family: 'Gilroy-Light';
+		line-height: 3.4128rem;
+		letter-spacing: 1.2px;
+		margin-top: 4.9769rem;
+		color: #585858
+	}
+
+	.a-cards__row {
+
+	}
+
+		.about-card {
+			width: 50%;
+		}
+
+			.about-card__image {
+				overflow: hidden;
+				border-radius: 50%;
+				img {
+					width: 14.219rem;
+					height: 14.219rem;	
+				}
+			}
+			
+			.about-card--data {
+				margin-left: 2.5596rem;
+			}
+
+				.about-card__head {
+					font-size: 1.990rem;
+					font-family: 'Gilroy-Bold';
+				}
+
+				.about-card__description {
+					color: #585858;
+					font-size: 1.990rem;
+					font-family: 'Gilroy-Light';
+				}

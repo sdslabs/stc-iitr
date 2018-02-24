@@ -42,6 +42,7 @@ $(document).ready(function() {
 	var groups = [
 		'sdslabs', 
 		'designstudio',
+		'aries'
 	];
 
 	function matchGroup(path){

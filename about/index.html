@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<div class="wrapper--about display--flex flex-direction-column vertical-align--center horizontal-align--center">
+	<div class="about__row about__head display--flex vertical-align--center">
+		<h1> ABOUT </h1>
+	</div>	
+	<div class="about__head--description about__row h2--large"> 
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae unde quas natus? Dolore nam molestiae rerum ipsum, ea molestias dolorem doloremque ut labore eaque quo magnam repellat tenetur eius cum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores quod delectus temporibus itaque! Alias fuga consectetur rerum quidem dolorem assumenda quod fugiat sit eius veritatis. Tempora assumenda facere doloribus placeat.
+	</div>
+	<div class="about__row about__head display--flex vertical-align--center">
+		<h1> COUNCIL </h1>
+	</div>
+	<div class="about__row a-cards__row display--flex">
+	{% assign members = site.council %}
+	{% for member in members %}
+		{% assign isMultipleTwo = forloop.index | modulo: 2 %}
+			<div class="about-card display--flex">
+				<div class="about-card__image">
+					<img src="/images/{{member.image}}">
+				</div>
+				<div class="about-card--data display--flex horizontal-align--space-evenly flex-direction-column ">
+					<div class="about-card__head">
+						{{member.name | upcase }}	
+					</div>
+					<div class="about-card__description">
+						{{member.description}}
+					</div>
+				</div>
+			</div>	
+			{% if isMultipleTwo == 0 %}
+				</div>
+				<div class="about__row a-cards__row display--flex">	
+			{% endif %}
+	{% endfor %}
+	</div>
+	
+</div>
