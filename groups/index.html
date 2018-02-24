@@ -31,9 +31,21 @@ layout: default
 						 {{ group.phoneno }}
 					</div>
 					<div class="front__contact--links"> 
-						<a href="#"> <i class="fa fa-facebook"> </i> </a>
-						<a href="#"> <i class="fa fa-behance"> </i> </a>
-						<a href="#"> <i class="fa fa-twitter"> </i> </a>
+						{% if group.facebook %}
+						<a href="{{group.facebook}}"> <i class="fa fa-facebook"> </i> </a>
+						{% endif %}
+						{% if group.twitter %}
+						<a href="{{group.facebook}}"> <i class="fa fa-twitter"> </i> </a>
+						{% endif %}
+						{% if group.instagram %}
+						<a href="{{group.instagram}}"> <i class="fa fa-instagram"> </i> </a>
+						{% endif %}
+						{% if group.linkedin %}
+						<a href="{{group.linkedin}}"> <i class="fa fa-linkedin"> </i> </a>
+						{% endif %}
+						{% if group.portfolio %}
+						<a href="{{group.portfolio}}"> <i class="fa fa-window-maximize"> </i> </a>
+						{% endif %}
 					</div>
 				</div>
 			</div>
