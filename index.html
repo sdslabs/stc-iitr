@@ -4,54 +4,26 @@ layout: default
 
 <div class="wrapper--home position--fixed">
     <div class="notices-list notices-list--main display--flex vertical-align--center flex-direction-column horizontal-align--space-evenly">
-      <div class="h-notice h-notice--main display--flex">
-        <div class="h-notice__number">
-          <div>
-            01
+      {% assign notices = site.notices %}
+      {% for notice in notices limit: 3 %}
+        <div class="h-notice h-notice--main display--flex">
+          <div class="h-notice__number">
+            <div>
+              0{{forloop.index}} 
+            </div>
           </div>
-        </div>
-        <div class="h-notice__content display--flex flex-direction-column">
-          <h2>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. . . .  
-          </h2>
-          <div class="h-notice__date">
-              <h2>Dec 29</h2>
+          <div class="h-notice__content display--flex flex-direction-column">
+            <h2>
+              {{ notice.content | truncate: 70, " . . ."}} 
+            </h2>
+            <div class="h-notice__date">
+                <h2> {{ notice.date | date: '%b %d' }} </h2>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="h-notice h-notice--main display--flex">
-        <div class="h-notice__number">
-          <div>
-            02
-          </div>
-        </div>
-        <div class="h-notice__content display--flex flex-direction-column">
-          <h2>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. . . .  
-          </h2>
-          <div class="h-notice__date">
-              <h2>Dec 29</h2>
-          </div>
-        </div>
-      </div>
-      <div class="h-notice h-notice--main display--flex">
-        <div class="h-notice__number">
-          <div>
-            03
-          </div>
-        </div>
-        <div class="h-notice__content display--flex flex-direction-column">
-          <h2>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. . . .  
-          </h2>
-          <div class="h-notice__date">
-              <h2>Dec 29</h2>
-          </div>
-        </div>
-      </div>
-      
+        </div>  
+      {% endfor %}
       <div class="h-notice__all h-notice__all--main h1--smaller">
-        <a href="#"> ALL NOTICES </a>
+        <a href="/notices/"> ALL NOTICES </a>
       </div>
       <div class="arrow--right display--flex vertical-align--center horizontal-align--center">
         <i class="fa fa-arrow-right" aria-hidden="true"></i>
