@@ -18,12 +18,14 @@ layout: default
 					{% endif %}
 
 			</div>
-			<div class="notice--content h1--smaller"> 
-				<div class="content__text">
+			<div class="notice--content h1--smaller" data-number="{{forloop.index}}"> 
+				<div class="content__text notice--{{forloop.index}}">
 					{{ notice.content }}
+					<div class="ellipsis notice--{{forloop.index}}">...</div>
 				</div>
-				<div class="content__link h1--smaller">
-					<a href="#"> View Details </a>
+				<div class="content__link notice--{{forloop.index}} h1--smaller">
+					<a href="#"> Read More </a>
+					<i class="fa fa-chevron-down"></i>
 				</div>
 			</div>
 			<div class="notice--date h1--smaller"> {{ notice.date | date: '%b %d' }} </div>

@@ -26,4 +26,25 @@ $(document).ready(function(){
 		$('.all-awards').addClass('display--none');
 	});
 
+
+	/* NOTICES READ MORE */
+
+	var notices = $('.content__link');
+	var length = notices.length;
+	var readMore = function(e){
+			e.preventDefault();
+			console.log('bhai ka data'+e.data)
+			notice_no = e.data+1;
+			$('.content__text.notice--'+notice_no).toggleClass('height--auto')
+			$('.ellipsis.notice--'+notice_no).toggleClass('display--none');
+			$('.content__link.notice--'+notice_no+' i').toggleClass('fa-chevron-down');
+			$('.content__link.notice--'+notice_no+' i').toggleClass('fa-chevron-up');
+		};
+	
+
+	for(var i=0;i<length; i++){
+		$('.content__link').eq(i).on('click', i, readMore)
+	}
+
+	
 });

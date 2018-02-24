@@ -31,10 +31,27 @@
 
 			.content__text {
 				margin-bottom: 2 * $gutter-width;
+				position: relative;
+				max-height: 2.2rem;
+				overflow-y: hidden;
+				padding-top: 0.2rem;
+				transition: max-height 0.2s ease;
 			}
 
+			.height--auto {
+				max-height: 100%;
+			}
+
+				.ellipsis {
+					position: absolute;
+					bottom: 0;
+					right: 4rem;
+				}
+
 			.content__link {
+				color: $primary-bg-color;
 				margin-bottom: 2rem;
+				cursor: pointer;
 			}
 				.content__link a:link, .content__link a:active, .content__link a:visited{
 					text-decoration: none;
