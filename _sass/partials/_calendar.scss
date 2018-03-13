@@ -1,0 +1,50 @@
+.calendar__left-nav {
+	width: 27.9423rem;
+	position: fixed;
+	height: 100%;
+	padding-top: 14.042rem;
+}
+
+	.left-nav__list {
+		width: 64%;
+		height: 21.8rem;
+		overflow-y: hidden;
+	}
+
+		.c-left-nav__month { 
+			font-family: 'Montserrat', sans-serif;
+			font-size: 2.5596rem;
+			font-weight: 800;
+			text-align: center;
+			padding: 2.4861999rem 0;
+			color: rgba(0, 0, 0, 0.55);
+			transition: transform 0.5s, color 0.5s cubic-bezier(0, 0.96, 0.32, 1.11);
+		}
+
+		.c-left-nav__month--active {
+			color: black
+		}
+
+	.calendar--up, .calendar--down {
+		cursor: pointer;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 2.5596rem;
+		font-weight: 900;
+		text-align: center;
+		width: 65%;
+		color: black;
+	}
+
+	.arrow--inactive {
+		color: rgba(0, 0, 0, 0.55);
+	}
+
+	.wrapper--calendar {
+		padding-top: 7.51rem;
+		width: 100%;
+	}
+	
+		.calendar__right-list {
+			flex-grow: 1;
+			margin-left: 27.9423rem;
+		}
