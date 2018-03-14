@@ -8,9 +8,9 @@ layout: default
 	{% assign calendar = site.data.calendar %}
 	{% for month in calendar %}
 		{% if forloop.index == 1%}
-			<div class="c-left-nav__month c-left-nav__month--active"> {{ month.month.name }}</div>
+			<div class="c-left-nav__month c-left-nav__month--active" data-active="{{ forloop.index0 }}"> {{ month.month.name }}</div>
 		{% else %}
-			<div class="c-left-nav__month"> {{ month.month.name }}</div>
+			<div class="c-left-nav__month" data-active="{{ forloop.index0 }}"> {{ month.month.name }}</div>
 		{% endif %}
 	{% endfor %}
 	</div>

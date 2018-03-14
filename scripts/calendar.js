@@ -2,15 +2,31 @@ $(document).ready(function() {
 	const leftNavList = $('.c-left-nav__month');
 	const arrowUp = $('.calendar--up');
 	const arrowDown = $('.calendar--down');
-	const calendar = $('.month');
+	const months = $('.month');
 	let translate = 0;
 	let topInView = 0;
 	let downInView = 2;
 	let upActive = false; 
 	let downActive = true; 
 	let active = 0;
+	let offsets = [];
+	let firstmonthOffset = months[0].offsetTop;
 
-	let setScrollPermission = function (active) {
+	let marginTop = $('.date__row').css('margin-top');
+	marginTop= parseInt(marginTop.replace('px',''));
+
+	const calcOffsets = function () {
+		offsets = [0];
+		$.each(months, (index, month) => {
+			offsets.push(month.offsetTop + month.offsetHeight + marginTop - firstmonthOffset);
+		});
+	};
+
+	const scrollTo = function(active) {
+		$("html, body").animate({ scrollTop: offsets[active]},1000,'swing');	
+	};
+
+	const setScrollPermission = function (active) {
 		if (active == 0)	{
 			upActive = false;
 			downActive = true;
@@ -32,41 +48,44 @@ $(document).ready(function() {
 		} else {
 			arrowDown.removeClass('arrow--inactive');
 		}
+	};
 
-	}
-
-
-	$('.calendar--down').on('click', function() {
-		if (downActive) {
-			leftNavList[active].classList.remove('c-left-nav__month--active');
-			leftNavList[active + 1].classList.add('c-left-nav__month--active');
-			active++;
+	const scrollAction = function(currentActive, nextActive, permission) {
+		if (permission) {
+			leftNavList[currentActive].classList.remove('c-left-nav__month--active');
+			leftNavList[nextActive].classList.add('c-left-nav__month--active');
+			active = nextActive;
 			
 			if(active <topInView || active > downInView) {
-				translate = translate - 7.7;
+				translate = (nextActive > currentActive) ? translate - 7.7: translate + 7.7;
 				$('.c-left-nav__month').css('transform', 'translateY(' + translate + 'rem)');
-				topInView++;
-				downInView++;
+				topInView = (nextActive > currentActive) ? topInView + 1: topInView - 1;
+				downInView = (nextActive > currentActive) ? downInView + 1: downInView - 1;
 			}
-			
+
+			scrollTo(active);
 			setScrollPermission(active);
 		}
-	});
+	};
 
-	$('.calendar--up').on('click', function() {
-		if (upActive) {
-			leftNavList[active].classList.remove('c-left-nav__month--active');
-			leftNavList[active - 1].classList.add('c-left-nav__month--active');
-			active--;
+	calcOffsets();
+	scrollTo(0);
 
-			if (active < topInView || active >downInView) {
-				translate = translate + 7.7;
-				$('.c-left-nav__month').css('transform', 'translateY(' + translate + 'rem)');
-				topInView--;
-				downInView--;
-			}
-			console.log(active);
-			setScrollPermission(active);
-		}
+	// $(window).on('scroll', function() {
+	// 	var pageOffset = window.pageYOffset + window.outerHeight;
+	// 	// console.log(pageOffset);
+	// 	$.each(offsets, function(index, offset) {
+	// 		if(offsets[index] + firstmonthOffset + 20 < pageOffset && pageOffset < offsets[index + 1] + firstmonthOffset + 20) console.log(index);
+	// 	});
+	// });
+	// console.log(offsets);
+
+	$('.calendar--down').on('click', () => scrollAction(active, active+1, downActive));
+
+	$('.calendar--up').on('click', () => scrollAction(active, active-1, upActive));
+
+	$('.c-left-nav__month').on('click', function () {
+		let nextActive = $(this).data('active');
+		scrollAction(active, nextActive, true);
 	});
 });
