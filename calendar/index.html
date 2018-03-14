@@ -5,18 +5,65 @@ layout: default
 <div class="calendar__left-nav display--flex flex-direction-column vertical-align--flex-end">
 	<div class="calendar--up arrow--inactive"> &uarr; </div>
 	<div class="left-nav__list">
-		<div class="c-left-nav__month c-left-nav__month--active"> JAN </div>
-		<div class="c-left-nav__month"> FEB </div>
-		<div class="c-left-nav__month"> MAR </div>
-		<div class="c-left-nav__month"> APR </div>
-		<div class="c-left-nav__month"> DEC </div>
+	{% assign calendar = site.data.calendar %}
+	{% for month in calendar %}
+		{% if forloop.index == 1%}
+			<div class="c-left-nav__month c-left-nav__month--active"> {{ month.month.name }}</div>
+		{% else %}
+			<div class="c-left-nav__month"> {{ month.month.name }}</div>
+		{% endif %}
+	{% endfor %}
 	</div>
 	<div class="calendar--down"> &darr; </div>
 </div>
 
-<div class="wrapper--calendar display--flex">
-	<div class="calendar__right-list">
-		Right calendar list
+<div class="wrapper--calendar">
+	<div class="month">
+		<div class="date__row display--flex">
+			<div class="date">
+				<div class="date__head">
+					<div class="date__head--underline"> </div>
+					01
+				</div>
+				<div class="month__event display--flex flex-direction-column">
+					<div class="event__data display--flex">
+						<i class="fa fa-calendar"></i>
+						<div class="event__text"> Talk by Astronomy Club </div>
+					</div>
+					<div class="event__data display--flex"> 
+						<i class="fa fa-map-marker"></i>
+						<div class="event__location"> Mac Auditorium </div>
+					</div>
+					<div class="event__data display--flex"> 
+						<i class="fa fa-clock-o"></i>
+						<div class="event__time"> 6:00 PM onwards </div>		
+					</div>
+				</div>
+			</div>
+			<div class="date">
+				<div class="date__head">
+					<div class="date__head--underline"> </div>
+					01
+				</div>
+				<div class="month__event display--flex flex-direction-column">
+					<div class="event__data display--flex">
+						<i class="fa fa-calendar"></i>
+						<div class="event__text"> Talk by Astronomy Club </div>
+					</div>
+					<div class="event__data display--flex"> 
+						<i class="fa fa-map-marker"></i>
+						<div class="event__location"> Mac Auditorium </div>
+					</div>
+					<div class="event__data display--flex"> 
+						<i class="fa fa-clock-o"></i>
+						<div class="event__time"> 6:00 PM onwards </div>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="month">
+		{{ site.data.calendar }}
 	</div>
 </div>
 

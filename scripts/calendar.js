@@ -2,6 +2,7 @@ $(document).ready(function() {
 	const leftNavList = $('.c-left-nav__month');
 	const arrowUp = $('.calendar--up');
 	const arrowDown = $('.calendar--down');
+	const calendar = $('.month');
 	let translate = 0;
 	let topInView = 0;
 	let downInView = 2;

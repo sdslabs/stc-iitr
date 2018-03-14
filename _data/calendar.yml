@@ -1,0 +1,50 @@
+- month:
+    name: Jan
+    dates:
+      - date: 01
+        events:
+            - event:
+                name: Meeting at SDS
+                location: Mac Audi
+                time: 6PM
+            - event:
+                name: Meeting at DS
+                location: STC
+                time: 7PM
+      - date: 01
+        events:
+            - event:
+                name: Meeting at SDS
+                location: Mac Audi
+                time: 6PM
+            - event:
+                name: Meeting at DS
+                location: STC
+                time: 7PM
+- month:
+    name: Feb
+    dates:
+      - date: 01
+        events:
+            - event:
+                name: Meeting at SDS
+                location: Mac Audi
+                time: 6PM
+            - event:
+                name: Meeting at DS
+                location: STC
+                time: 7PM
+      - date: 01
+        events:
+            - event:
+                name: Meeting at SDS
+                location: Mac Audi
+                time: 6PM
+            - event:
+                name: Meeting at DS
+                location: STC
+                time: 7PM
+- month: 
+    name: March
+- month:
+    name: Dec

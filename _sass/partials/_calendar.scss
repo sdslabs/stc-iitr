@@ -39,12 +39,62 @@
 		color: rgba(0, 0, 0, 0.55);
 	}
 
-	.wrapper--calendar {
-		padding-top: 7.51rem;
-		width: 100%;
-	}
+.wrapper--calendar {
+	padding-top: 7.51rem;
+	width: 100%;
+}
 	
-		.calendar__right-list {
-			flex-grow: 1;
-			margin-left: 27.9423rem;
-		}
+	.month {
+		margin-left: 27.9423rem;
+		height: 90vh;
+	}
+
+		.date-row {
+		}	
+
+			.date {
+				flex: 1;
+				max-width: 50%;
+				margin-top: 5.532rem;
+				margin-left: 5rem;
+			}
+
+				.date__head {
+					font-size: 7.10999rem;
+					color: $primary-bg-color;
+					font-family: 'Gilroy-Bold';
+					position: relative;
+					margin-bottom: 4.266rem;
+				}
+
+					.date__head--underline {
+						border-bottom: 5px solid $primary-bg-color;
+						width: 9%;
+						height: 100%;
+						position: absolute;
+						z-index: 1;
+					}
+
+				.month__event {
+					margin-bottom: 2.133rem;
+					color: rgba(0,0,0,0.9);
+					font-size: 2.033rem;
+				}
+				
+					.event__data {
+						color: rgba(0,0,0,0.9);
+						font-size: 2.033rem;
+						margin-bottom: 2.133rem;
+						font-family: 'Gilroy-Light';
+
+						i {
+							flex: 1;
+							color: rgba(0,0,0,0.9);
+							font-size: 2.033rem;
+						}	
+					}
+
+						.event__text, .event__time, .event__location {
+							flex: 10;
+						}
+						
