@@ -10,6 +10,7 @@ $(document).ready(function() {
 	let downActive = true; 
 	let active = 0;
 	let offsets = [];
+	let offsetMargin = $(window).height()/4;
 	let firstmonthOffset = months[0].offsetTop;
 
 	let marginTop = $('.date__row').css('margin-top');
@@ -63,29 +64,44 @@ $(document).ready(function() {
 				downInView = (nextActive > currentActive) ? downInView + 1: downInView - 1;
 			}
 
-			scrollTo(active);
+			// scrollTo(active);
 			setScrollPermission(active);
 		}
 	};
 
 	calcOffsets();
 	scrollTo(0);
+	var tempactive = 0;
+	$(window).on('scroll', function() {
+		let pageOffset = window.pageYOffset + window.innerHeight;
+		$.each(offsets, function(index, offset) {
+			if(offsets[index] + firstmonthOffset + offsetMargin < pageOffset && pageOffset < offsets[index + 1] + firstmonthOffset + offsetMargin) {
+				let nextActive = index;
+				if(nextActive != tempactive) {
+					// console.log(tempactive, nextActive);
+					scrollAction(tempactive, nextActive, true);
+					tempactive = nextActive;
+				}
+			}
+		});
 
-	// $(window).on('scroll', function() {
-	// 	var pageOffset = window.pageYOffset + window.outerHeight;
-	// 	// console.log(pageOffset);
-	// 	$.each(offsets, function(index, offset) {
-	// 		if(offsets[index] + firstmonthOffset + 20 < pageOffset && pageOffset < offsets[index + 1] + firstmonthOffset + 20) console.log(index);
-	// 	});
-	// });
-	// console.log(offsets);
+	});
 
-	$('.calendar--down').on('click', () => scrollAction(active, active+1, downActive));
+	$('.calendar--down').on('click', () => {
+		let nextActive = active + 1;
+		scrollAction(active, active + 1, downActive);
+		scrollTo(nextActive);
+	});
 
-	$('.calendar--up').on('click', () => scrollAction(active, active-1, upActive));
+	$('.calendar--up').on('click', () => {
+		let nextActive = active - 1;
+		scrollAction(active, active - 1, upActive);
+		scrollTo(nextActive);
+	});
 
 	$('.c-left-nav__month').on('click', function () {
 		let nextActive = $(this).data('active');
 		scrollAction(active, nextActive, true);
+		scrollTo(nextActive);
 	});
 });
