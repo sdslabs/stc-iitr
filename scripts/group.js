@@ -79,7 +79,7 @@ $(document).ready(function() {
 
 	// next and previous handling
 
-	$('.next').click(function(e){
+	$('.previous').click(function(e){
 		e.preventDefault();
 
 		var currentPath = document.location.pathname.split('/')[2];
@@ -93,7 +93,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$('.previous').click(function(e){
+	$('.next').click(function(e){
 		e.preventDefault();
 
 		var currentPath = document.location.pathname.split('/')[2];
