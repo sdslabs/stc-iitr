@@ -46,17 +46,28 @@
 	
 	.month {
 		margin-left: 27.9423rem;
-		height: 90vh;
 	}
 
-		.date-row {
+		.date__row {
+			margin-top: 5.532rem;
+			margin-left: 5rem;
+			width: 80%;
+			&:last-child {
+				border-bottom: 1px solid rgba(0, 0, 0, 0.45);
+				padding-bottom: 3rem;
+			}
+			&:first-child {
+				padding-top: 1rem;
+			}
 		}	
 
 			.date {
 				flex: 1;
 				max-width: 50%;
-				margin-top: 5.532rem;
-				margin-left: 5rem;
+
+				&:first-child {
+					margin-right: 9rem;
+				}
 			}
 
 				.date__head {

@@ -18,53 +18,45 @@ layout: default
 </div>
 
 <div class="wrapper--calendar">
-	<div class="month">
-		<div class="date__row display--flex">
-			<div class="date">
-				<div class="date__head">
-					<div class="date__head--underline"> </div>
-					01
-				</div>
-				<div class="month__event display--flex flex-direction-column">
-					<div class="event__data display--flex">
-						<i class="fa fa-calendar"></i>
-						<div class="event__text"> Talk by Astronomy Club </div>
-					</div>
-					<div class="event__data display--flex"> 
-						<i class="fa fa-map-marker"></i>
-						<div class="event__location"> Mac Auditorium </div>
-					</div>
-					<div class="event__data display--flex"> 
-						<i class="fa fa-clock-o"></i>
-						<div class="event__time"> 6:00 PM onwards </div>		
-					</div>
-				</div>
-			</div>
-			<div class="date">
-				<div class="date__head">
-					<div class="date__head--underline"> </div>
-					01
-				</div>
-				<div class="month__event display--flex flex-direction-column">
-					<div class="event__data display--flex">
-						<i class="fa fa-calendar"></i>
-						<div class="event__text"> Talk by Astronomy Club </div>
-					</div>
-					<div class="event__data display--flex"> 
-						<i class="fa fa-map-marker"></i>
-						<div class="event__location"> Mac Auditorium </div>
-					</div>
-					<div class="event__data display--flex"> 
-						<i class="fa fa-clock-o"></i>
-						<div class="event__time"> 6:00 PM onwards </div>		
-					</div>
+	{% assign calendar = site.data.calendar %}
+	{% for month in calendar %}
+			<div class="month">
+				<div class="date__row display--flex">
+				{% for date in month.month.dates %}
+					{% assign isMultipleTwo = forloop.index | modulo: 2 %}
+					<div class="date">
+						<div class="date__head">
+							<div class="date__head--underline"> </div>
+								{{ date.date }}	
+						</div>
+						{% for event in date.events%}
+							<div class="month__event display--flex flex-direction-column">
+								<div class="event__data display--flex">
+									<i class="fa fa-calendar"></i>
+									<div class="event__text"> {{ event.event.name }} </div>
+								</div>
+								<div class="event__data display--flex"> 
+									<i class="fa fa-map-marker"></i>
+									<div class="event__location"> {{ event.event.location }}</div>
+								</div>
+								<div class="event__data display--flex"> 
+									<i class="fa fa-clock-o"></i>
+									<div class="event__time"> {{ event.event.time }} </div>		
+								</div>
+							</div>
+						{% endfor %}
+						{% if isMultipleTwo == 0 %}
+							</div> <!-- end of date -->
+							</div> <!-- end of date row -->
+							<div class="date__row display--flex"> <!-- beginning of a new date row closed immediately if not more dates !-->
+						{% else %}
+							</div> <!-- just closes the date -->
+						{% endif %}
+
+				{% endfor %}
 				</div>
 			</div>
-		</div>
-	</div>
-	<div class="month">
-		{{ site.data.calendar }}
-	</div>
+	{% endfor %}
 </div>
 
 <script type="text/javascript" src="/scripts/calendar.js"></script>
