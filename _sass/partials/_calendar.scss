@@ -64,7 +64,7 @@
 
 			.date {
 				flex: 1;
-				max-width: 50%;
+				max-width: 44%;
 
 				&:first-child {
 					margin-right: 9rem;
@@ -88,9 +88,12 @@
 					}
 
 				.month__event {
+					position: relative;
 					margin-bottom: 2.133rem;
 					color: rgba(0,0,0,0.9);
 					font-size: 2.033rem;
+					height: 2.1rem;
+					overflow-y: hidden;
 				}
 				
 					.event__data {
@@ -105,6 +108,20 @@
 							font-size: 2.033rem;
 						}	
 					}
+
+					.c-read__more{
+						position: absolute;			
+						bottom: 0;
+						right: 0;
+						cursor: pointer;
+						i {
+							color: $primary-bg-color;
+						}
+					}
+
+				.height--auto {
+					height: auto;
+				}
 
 						.event__text, .event__time, .event__location {
 							flex: 10;

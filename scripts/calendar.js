@@ -10,7 +10,7 @@ $(document).ready(function() {
 	let downActive = true; 
 	let active = 0;
 	let offsets = [];
-	let offsetMargin = $(window).height()/4;
+	let offsetMargin = $(window).height()/3.5;
 	let firstmonthOffset = months[0].offsetTop;
 
 	let marginTop = $('.date__row').css('margin-top');
@@ -53,6 +53,8 @@ $(document).ready(function() {
 
 	const scrollAction = function(currentActive, nextActive, permission) {
 		if (permission) {
+			calcOffsets();
+			
 			leftNavList[currentActive].classList.remove('c-left-nav__month--active');
 			leftNavList[nextActive].classList.add('c-left-nav__month--active');
 			active = nextActive;
@@ -64,13 +66,13 @@ $(document).ready(function() {
 				downInView = (nextActive > currentActive) ? downInView + 1: downInView - 1;
 			}
 
-			// scrollTo(active);
 			setScrollPermission(active);
 		}
 	};
 
 	calcOffsets();
 	scrollTo(0);
+
 	var tempactive = 0;
 	$(window).on('scroll', function() {
 		let pageOffset = window.pageYOffset + window.innerHeight;
@@ -104,4 +106,18 @@ $(document).ready(function() {
 		scrollAction(active, nextActive, true);
 		scrollTo(nextActive);
 	});
+
+	const event_links = $('.c-read__more');
+
+	const readMoreEvents = function(e) {
+		let event_id = $(this).data('event');
+		$('#' + event_id).toggleClass('height--auto');
+		$(this).children('i').toggleClass('fa-chevron-down');
+		$(this).children('i').toggleClass('fa-chevron-up');
+		calcOffsets();
+	}
+
+	for(let i = 0; i < event_links.length; i++)
+		event_links.eq(i).on('click', i, readMoreEvents);
+
 });

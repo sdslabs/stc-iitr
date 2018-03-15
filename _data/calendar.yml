@@ -15,7 +15,7 @@
                 name: Meeting at DS
                 location: STC
                 time: 7PM
-      - date: '01'
+      - date: '02'
         events:
             - event:
                 name: Meeting at SDS
@@ -25,7 +25,7 @@
                 name: Meeting at DS
                 location: STC
                 time: 7PM
-      - date: '01'
+      - date: '21'
         events:
             - event:
                 name: Meeting at SDS
@@ -48,7 +48,7 @@
                 name: Meeting at DS
                 location: STC
                 time: 7PM
-      - date: '01'
+      - date: '11'
         events:
             - event:
                 name: Meeting at SDS
@@ -61,7 +61,7 @@
 - month: 
     name: March
     dates:
-      - date: '01'
+      - date: '13'
         events:
             - event:
                 name: Meeting at SDS
@@ -94,7 +94,7 @@
 - month:
     name: Dec
     dates:
-      - date: '21'
+      - date: '30'
         events:
             - event:
                 name: Meeting at SDS

@@ -33,7 +33,6 @@ $(document).ready(function(){
 	var length = notices.length;
 	var readMore = function(e){
 			e.preventDefault();
-			console.log('bhai ka data'+e.data)
 			notice_no = e.data+1;
 			$('.content__text.notice--'+notice_no).toggleClass('height--auto')
 			$('.ellipsis.notice--'+notice_no).toggleClass('display--none');
