@@ -46,9 +46,8 @@
 			.group-card__img {
 				position: absolute;
 				top:0;
-				left: 0;
+				margin-left: -50%;
 				height: 34.4124rem;
-				width: 22.894199999999998rem;	
 				z-index: -1;
 				transition: transform 0.2s ease;
 			}
