@@ -41,8 +41,9 @@ $(document).ready(function() {
 	// array of all group tags
 	var groups = [
 		'sdslabs', 
-		'designstudio',
-		'aries'
+		'edciitr',
+		'mdg',
+		'shareiitr'
 	];
 
 	function matchGroup(path){
@@ -69,7 +70,7 @@ $(document).ready(function() {
 		groups.forEach(function(group,index){
 			if(group != path){
 				var groupContainer = document.getElementById(group);
-				groupContainer.classList.add('invisible')
+				groupContainer.classList.add('invisible');
 			}		
 		});
 		var currentGroup = document.getElementById(path);

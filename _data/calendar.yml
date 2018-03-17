@@ -1,106 +1,67 @@
 - month:
     name: Jan
     dates:
-      - date: '01'
+      - date: '05'
         events:
             - event:
-                name: Meeting at SDS
-                location: Mac Audi
-                time: 6PM
-            - event:
-                name: Meeting at DS
-                location: STC
-                time: 7PM
-            - event:
-                name: Meeting at DS
-                location: STC
-                time: 7PM
-      - date: '02'
+                name: Inter IIT Tech Meet
+                location: IIT Madras
+                time: 10AM
+      - date: '08'
         events:
             - event:
-                name: Meeting at SDS
-                location: Mac Audi
-                time: 6PM
-            - event:
-                name: Meeting at DS
-                location: STC
-                time: 7PM
-      - date: '21'
+                name: SDSLabs Recruitment
+                location: STC Building
+                time: 12PM
+      - date: '15'
         events:
             - event:
-                name: Meeting at SDS
-                location: Mac Audi
-                time: 6PM
-            - event:
-                name: Meeting at DS
-                location: STC
-                time: 7PM
+                name: Design Studio Recruitment
+                location: STC Building
+                time: 12PM
 - month:
     name: Feb
     dates:
-      - date: '01'
+      - date: '02'
         events:
             - event:
-                name: Meeting at SDS
-                location: Mac Audi
-                time: 6PM
-            - event:
-                name: Meeting at DS
-                location: STC
-                time: 7PM
-      - date: '11'
+                name: Muzi Launch
+                location: https://muzi.sdslabs.co/
+                time: 9PM
+      - date: '28'
         events:
             - event:
-                name: Meeting at SDS
-                location: Mac Audi
-                time: 6PM
-            - event:
-                name: Meeting at DS
-                location: STC
-                time: 7PM
-- month: 
-    name: March
-    dates:
-      - date: '13'
-        events:
-            - event:
-                name: Meeting at SDS
-                location: Mac Audi
-                time: 6PM
-            - event:
-                name: Meeting at DS
-                location: STC
-                time: 7PM
-      - date: '04'
-        events:
-            - event:
-                name: Meeting at SDS
-                location: Mac Audi
-                time: 6PM
-            - event:
-                name: Meeting at DS
-                location: STC
-                time: 7PM
-      - date: '01'
-        events:
-            - event:
-                name: Meeting at SDS
-                location: Mac Audi
-                time: 6PM
-            - event:
-                name: Meeting at DS
-                location: STC
-                time: 7PM
+                name: Live Launch
+                location: https://live.sdslabs.co/
+                time: 9PM
 - month:
-    name: Dec
+    name: Mar
     dates:
-      - date: '30'
+      - date: '14'
         events:
             - event:
-                name: Meeting at SDS
-                location: Mac Audi
+                name: Intro to Data Science
+                location: EC Audi
                 time: 6PM
+      - date: '15'
+        events:
             - event:
-                name: Meeting at DS
-                location: STC
-                time: 7PM
+                name: Intro to Cryptography
+                location: EC Audi
+                time: 6PM
+      - date: '17'
+        events:
+            - event:
+                name: Srishti 2018
+                location: STC Building
+                time: 10AM
+            - event:
+                name: Backdoor CTF-2018
+                location: https://backdoor.sdslabs.co 
+                time: 9PM
+      - date: '18'
+        events:
+            - event:
+                name: Srishti 2018
+                location: STC Building
+                time: 10AM

@@ -67,7 +67,7 @@ layout: default
 			{% assign isOdd = forloop.index | modulo:2 %}
 			{% if project.group == group.name %}
 				<div class="g-card display--flex">
-					<div class="g-card__image">
+					<div class="g-card__image display--flex vertical-align--center horizontal-align--center">
 						<img data-echo="../images/{{project.image}}">
 					</div>
 					<div class="g-card__data display--flex flex-direction-column horizontal-align--space-around">
