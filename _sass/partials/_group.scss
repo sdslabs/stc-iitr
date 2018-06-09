@@ -24,6 +24,7 @@
 	.invisible {
 		z-index: -100;
 		opacity: 0;
+		display: none;
 	}
 	
 	.group-front{
@@ -35,83 +36,87 @@
 		.front__left-leaf {
 			width: 50%;
 			flex: 1;
-
 		}
 
-			.front__paginate {
-				@extend %width-left-leaf;
-				color: $primary-bg-color;
-				font-family: 'Gilroy-Light';
-
-				h2 {
-					letter-spacing: 1px;
-					a {
-						text-decoration: none;
-						color: $primary-bg-color;
-					}
-				}
+			.group__info {
+				position: absolute;
+				top: 15rem;
 			}
 
-			.front__head {
-				@extend %width-left-leaf;
-
-				margin-top: 2.84rem;
-
-				h1 {
-					font-family: 'Montserrat', sans-serif;
-					font-weight: 900;
-				}
-
-				.front__sub-head {
+				.front__paginate {
+					@extend %width-left-leaf;
 					color: $primary-bg-color;
 					font-family: 'Gilroy-Light';
-					letter-spacing: 1px;
-					margin-top: 1.4rem;
-				}
-			}
 
-			.front__content {
-				@extend %width-left-leaf;
-				font-family: 'Gilroy-Light';
-				font-size: 1.7rem;
-				color: #585858;
-				letter-spacing: 1px;
-				line-height: 2.844rem;
-				margin-top: 3.9105rem;
-			}
-
-			.front__contact {
-				@extend %width-left-leaf;
-				margin-top: 5.688rem;
-			}
-
-				.front__contact--name {
-					font-family: 'Montserrat', san-serif;
-					letter-spacing: 1.2px;
-					font-weight: 500;
+					h2 {
+						letter-spacing: 1px;
+						a {
+							text-decoration: none;
+							color: $primary-bg-color;
+						}
+					}
 				}
 
-				.front__contact--info {
-					font-family: 'Montserrat', san-serif;
+				.front__head {
+					@extend %width-left-leaf;
+
+					margin-top: 2.84rem;
+
+					h1 {
+						font-family: 'Montserrat', sans-serif;
+						font-weight: 900;
+					}
+
+					.front__sub-head {
+						color: $primary-bg-color;
+						font-family: 'Gilroy-Light';
+						letter-spacing: 1px;
+						margin-top: 1.4rem;
+					}
+				}
+
+				.front__content {
+					@extend %width-left-leaf;
+					font-family: 'Gilroy-Light';
+					font-size: 1.7rem;
 					color: #585858;
-					font-size: 1.5rem;
-					margin-top: 1.4rem;
+					letter-spacing: 1px;
+					line-height: 2.844rem;
+					margin-top: 3.9105rem;
 				}
 
-				.front__contact--links {
-					font-size: 2.7rem;
-					margin-top: 6.9099rem; 
+				.front__contact {
+					@extend %width-left-leaf;
+					margin-top: 5.688rem;
+				}
+
+					.front__contact--name {
+						font-family: 'Montserrat', san-serif;
+						letter-spacing: 1.2px;
+						font-weight: 500;
+					}
+
+					.front__contact--info {
+						font-family: 'Montserrat', san-serif;
+						color: #585858;
+						font-size: 1.5rem;
+						margin-top: 1.4rem;
+					}
+
+					.front__contact--links {
+						font-size: 2.7rem;
+						margin-top: 6.9099rem; 
+						
+						a {
+							text-decoration: none;
+							color: black;
+						}
+
+						i {
+							margin-right: 3.91rem;
+						}
+					}
 					
-					a {
-						text-decoration: none;
-						color: black;
-					}
-
-					i {
-						margin-right: 3.91rem;
-					}
-				}
-
 		.front__image {
 			width: 56.4534rem;
 			overflow: hidden;
