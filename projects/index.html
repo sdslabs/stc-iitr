@@ -4,38 +4,42 @@ layout: default
 
 {% assign open_projects = site.open_projects %}
 
-
 <div class="wrapper--open-projects">
-	<div class="open-project position--fixed">
+
+{% for open_project in open_projects %}
+	<div class="open-project position--fixed" id="{{open_project.tag}}">
 		<div class="open-project-front display--flex horizontal-align--center vertical-align--center">
 			<div class="op-front__left display--flex vertical-align--center horizontal-align--center flex-direction-colum">
 				<div class="op-project__info">
 					<div class="op-front__paginate">
 						<h2> 
-							1 of 2
+							{{forloop.index}}	of {{forloop.length}}
 							<a href="#" class="previous"> < </a>
 							<a href="#" class="next"> > </a>
 						</h2>
 					</div>
 					<div class="op-front__head">
-						<h1> Project Name </h1> 
+						<h1> {{open_project.title}} </h1> 
 						<div class="op-front__sub-head">
-							<h2> Subtitle </h2>
+							<h2> {{open_project.sub_title}} </h2>
 						</div>	
 					</div>
 					<div class="op-front__content">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos voluptatibus odio, commodi nihil, accusantium dolores, adipisci eaque, praesentium nemo ipsam ad quia dicta officiis voluptas perspiciatis tempora aperiam animi id.
+						{{open_project.description}}
 					</div>			
 					<div class="op-front__know-more">
-						<a href="#">
+						<a href="{{open_project.url}}">
 							<h2> To know more </h2>
 						</a>	
 					</div>	
 				</div>
 			</div>
 			<div class="op-front__image">
-				<image data-echo="../images/main.png">
+				<img data-echo="../images/{{open_project.image}}">
 			</div>
 		</div>
 	</div>
+{% endfor %}
 </div>	
+
+<script type="text/javascript" src="/scripts/open_projects.js"></script>

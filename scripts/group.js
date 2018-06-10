@@ -42,7 +42,8 @@ $(document).ready(function() {
 	var groups = [
 		'sdslabs', 
 		'designstudio',
-		'aries'
+		'aries',
+		'mars'
 	];
 
 	function matchGroup(path){
@@ -86,7 +87,7 @@ $(document).ready(function() {
 		for(index in groups){
 			if(groups[index] == currentPath){
 				var nextIndex = (parseInt(index)+1)%groups.length;
-				console.log(index);
+				// console.log(index);
 				matchGroup(groups[nextIndex]);
 				break;
 			}
@@ -101,7 +102,7 @@ $(document).ready(function() {
 			if(groups[index] == currentPath){
 				var tempIndex = parseInt(index)-1;
 				var nextIndex = (tempIndex!=-1)?tempIndex:groups.length-1;
-				console.log(index);
+				// console.log(index);
 				matchGroup(groups[nextIndex]);
 				break;
 			}

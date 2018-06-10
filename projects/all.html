@@ -8,8 +8,8 @@ layout: default
 	</div>
 		
 	<div class="wrapper--project__card display--flex">
-	{% assign projects = site.open_projects | sort: 'date' | reverse %}
-	{% for project in projects %}
+	{% assign open_projects = site.open_projects | sort: 'date' | reverse %}
+	{% for project in open_projects %}
 		{% assign isOdd = forloop.index | modulo:2 %}
 				<div class="project__card">
 					<div class="project__head h1--smaller">
@@ -18,7 +18,7 @@ layout: default
 					<div class="project__content"> {{ project.sub_title}} </div>
 					<div class="wrapper--projects__link">
 						<div class="project__link--border"> </div>
-						<a class="project__link h2--large display--block" href="#">
+						<a class="project__link h2--large display--block" href="/projects/{{project.tag}}">
 							VIEW DETAILS
 						</a>
 					</div>
