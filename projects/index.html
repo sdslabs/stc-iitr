@@ -2,34 +2,40 @@
 layout: default
 ---
 
-<div class="wrapper--projects display--flex horizontal-align--center flex-direction-column vertical-align--center">
-	<div class="projects__head h2--large">
-		Lorem ipsum dolor sit amet, consecte adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. lorem ipsum dolor simit amet conscete 
-	</div>
-		
-	<div class="wrapper--project__card display--flex">
-	{% assign projects = site.projects | sort: 'date' | reverse %}
-	{% for project in projects %}
-		{% assign isOdd = forloop.index | modulo:2 %}
-				<div class="project__card">
-					<div class="project__head h1--smaller">
-						{{ project.title | upcase }}
-					</div>
-					<div class="project__content"> {{ project.description}} </div>
-					<div class="wrapper--projects__link">
-						<div class="project__link--border"> </div>
-						<a class="project__link h2--large display--block" href="#">
-							VIEW DETAILS
-						</a>
-					</div>
-				</div>
-		{% if isOdd == 0 %}
-			</div>
-			<div class="wrapper--project__card display--flex">
-		{% endif %}
-	{% endfor %}
-</div>
+{% assign open_projects = site.open_projects %}
 
-<script type="text/javascript">
-	// document.getElementById("projects").classList.add('link--active');
-</script>
+
+<div class="wrapper--open-projects">
+	<div class="open-project position--fixed">
+		<div class="open-project-front display--flex horizontal-align--center vertical-align--center">
+			<div class="op-front__left display--flex vertical-align--center horizontal-align--center flex-direction-colum">
+				<div class="op-project__info">
+					<div class="op-front__paginate">
+						<h2> 
+							1 of 2
+							<a href="#" class="previous"> < </a>
+							<a href="#" class="next"> > </a>
+						</h2>
+					</div>
+					<div class="op-front__head">
+						<h1> Project Name </h1> 
+						<div class="op-front__sub-head">
+							<h2> Subtitle </h2>
+						</div>	
+					</div>
+					<div class="op-front__content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos voluptatibus odio, commodi nihil, accusantium dolores, adipisci eaque, praesentium nemo ipsam ad quia dicta officiis voluptas perspiciatis tempora aperiam animi id.
+					</div>			
+					<div class="op-front__know-more">
+						<a href="#">
+							<h2> To know more </h2>
+						</a>	
+					</div>	
+				</div>
+			</div>
+			<div class="op-front__image">
+				<image data-echo="../images/main.png">
+			</div>
+		</div>
+	</div>
+</div>	

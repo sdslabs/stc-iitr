@@ -28,5 +28,6 @@ collections:
   - groups
   - equipments
   - council
+  - open_projects
 
 include: [.htaccess]

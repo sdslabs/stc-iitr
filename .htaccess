@@ -14,4 +14,8 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^groups/(.*)$ groups/index.html [L]
 
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^projects/(.*)$ projects/index.html [L]
+
 </IfModule>
