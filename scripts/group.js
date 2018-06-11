@@ -39,12 +39,7 @@ $(document).ready(function() {
 	var path = url.split('/')[2];
 
 	// array of all group tags
-	var groups = [
-		'sdslabs', 
-		'designstudio',
-		'aries',
-		'mars'
-	];
+	var groups = JSON.parse($('#group-script').attr('group-data'))
 
 	function matchGroup(path){
 		var found = 0;
@@ -80,7 +75,7 @@ $(document).ready(function() {
 
 	// next and previous handling
 
-	$('.previous').click(function(e){
+	$('.next').click(function(e){
 		e.preventDefault();
 
 		var currentPath = document.location.pathname.split('/')[2];
@@ -94,7 +89,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$('.next').click(function(e){
+	$('.previous').click(function(e){
 		e.preventDefault();
 
 		var currentPath = document.location.pathname.split('/')[2];

@@ -2,9 +2,11 @@
 layout: default
 ---
 {% assign groups = site.groups %}
+{% assign group_tags = "" | split: ',' %}
 
 <div class="wrapper--group">
 {% for group in groups %}
+	{% assign group_tags = group_tags | push: group.tag %}
 	<div class="g-{{group.tag}} g-group" id="{{group.tag}}">
 		<div class="group-front display--flex horizontal-align--center" id="group-front">
 			<div class="front__left-leaf display--flex vertical-align--center horizontal-align--center flex-direction-column">
@@ -124,7 +126,6 @@ layout: default
 		</div>
 	</div>
 
-
 {% endfor %}
 </div>
 
@@ -132,5 +133,5 @@ layout: default
 	<div class="scroll-down__text display--flex vertical-align--center horizontal-align--center"> Scroll Down For Projects </div>
 	<div class="arrow-dw display--flex vertical-align--center horizontal-align--center"> &darr; </div>
 </div>
-
-<script type="text/javascript" src="/scripts/group.js"></script>
+	
+<script type="text/javascript" id="group-script" src="/scripts/group.js" group-data='{{group_tags | jsonify}}'></script>

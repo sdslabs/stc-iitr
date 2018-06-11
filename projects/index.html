@@ -3,10 +3,12 @@ layout: default
 ---
 
 {% assign open_projects = site.open_projects %}
+{% assign open_project_tags = "" | split: ',' %}
 
 <div class="wrapper--open-projects">
 
 {% for open_project in open_projects %}
+	{% assign open_project_tags = open_project_tags | push: open_project.tag %}
 	<div class="open-project position--fixed" id="{{open_project.tag}}">
 		<div class="open-project-front display--flex horizontal-align--center vertical-align--center">
 			<div class="op-front__left display--flex vertical-align--center horizontal-align--center flex-direction-colum">
@@ -42,4 +44,4 @@ layout: default
 {% endfor %}
 </div>	
 
-<script type="text/javascript" src="/scripts/open_projects.js"></script>
+<script id="open-project-script" type="text/javascript" src="/scripts/open_projects.js" open-project-data='{{open_project_tags | jsonify}}'></script>

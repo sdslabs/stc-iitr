@@ -3,11 +3,7 @@ $(document).ready(function() {
 	var path = url.split('/')[2];
 
 	// array of all open_project tags
-	var open_projects = [
-		'open-project-1', 
-		'open-project-2',
-		'open-project-3'
-	];
+	var open_projects = JSON.parse($('#open-project-script').attr('open-project-data'));
 
 	function matchProject(path){
 		var found = 0;
