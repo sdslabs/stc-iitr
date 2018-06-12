@@ -117,9 +117,8 @@ $(document).ready(function() {
 
 	// handling changes in states 
 	window.onpopstate = function(){
-		// var new_path = document.location.pathname.split('/')[2]
-		window.location.href = document.location.href
-		// (type == 'council') ? matchGroup(new_path, council_groups) : matchGroup(new_path, departmental_groups);
+		// reload on pop state
+		window.location.href = document.location.href;
 	}
 
 	if (council_groups.includes(path))

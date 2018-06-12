@@ -71,6 +71,7 @@ $(document).ready(function() {
 	// handling changes in states 
 
 	window.onpopstate = function(){
+		window.location.href = document.location.href;
 		matchProject(document.location.pathname.split('/')[2]);
 	}
 
