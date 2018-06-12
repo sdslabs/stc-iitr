@@ -39,9 +39,15 @@ $(document).ready(function() {
 	var path = url.split('/')[2];
 
 	// array of all group tags
-	var groups = JSON.parse($('#group-script').attr('group-data'))
+	var council_groups = JSON.parse($('#group-script').attr('council-group-data'))
+	var departmental_groups = JSON.parse($('#group-script').attr('departmental-group-data'))
 
-	function matchGroup(path){
+	// setting the groups lengths in individual places
+
+	$('.group-count--council').html(council_groups.length)
+	$('.group-count--departmental').html(departmental_groups.length)
+
+	function matchGroup(path, groups){
 		var found = 0;
 		for(index in groups){
 			if (groups[index] == path){
@@ -50,18 +56,18 @@ $(document).ready(function() {
 				if( tempURL != document.location.pathname){ 
 					window.history.pushState(null,null,groups[index]);
 				}
-				updateGroup(path);
+				updateGroup(path, groups);
 				break;
 			}
 		}
 
 		if(found == 0){
 			var randomIndex = Math.floor(Math.random()	* groups.length);
-			matchGroup(groups[randomIndex]);
+			matchGroup(groups[randomIndex], groups);
 		}
 	}
 
-	function updateGroup(path){
+	function updateGroup(path, groups){
 		groups.forEach(function(group,index){
 			if(group != path){
 				var groupContainer = document.getElementById(group);
@@ -79,11 +85,12 @@ $(document).ready(function() {
 		e.preventDefault();
 
 		var currentPath = document.location.pathname.split('/')[2];
+		var groups = council_groups.includes(currentPath) ? council_groups : departmental_groups;
+
 		for(index in groups){
 			if(groups[index] == currentPath){
 				var nextIndex = (parseInt(index)+1)%groups.length;
-				// console.log(index);
-				matchGroup(groups[nextIndex]);
+				matchGroup(groups[nextIndex], groups);
 				break;
 			}
 		}
@@ -93,22 +100,30 @@ $(document).ready(function() {
 		e.preventDefault();
 
 		var currentPath = document.location.pathname.split('/')[2];
+		var groups = council_groups.includes(currentPath) ? council_groups : departmental_groups;
+
 		for(index in groups){
 			if(groups[index] == currentPath){
 				var tempIndex = parseInt(index)-1;
 				var nextIndex = (tempIndex!=-1)?tempIndex:groups.length-1;
-				// console.log(index);
-				matchGroup(groups[nextIndex]);
+				matchGroup(groups[nextIndex], groups);
 				break;
 			}
 		}
 	});
 
-	// handling changes in states 
+	var params = (new URL(document.location)).searchParams;
+	var type = params.get('type');
 
+	// handling changes in states 
 	window.onpopstate = function(){
-		matchGroup(document.location.pathname.split('/')[2]);
+		// var new_path = document.location.pathname.split('/')[2]
+		window.location.href = document.location.href
+		// (type == 'council') ? matchGroup(new_path, council_groups) : matchGroup(new_path, departmental_groups);
 	}
 
-	matchGroup(path);
+	if (council_groups.includes(path))
+		matchGroup(path, council_groups)
+	else
+		matchGroup(path, departmental_groups)
 });

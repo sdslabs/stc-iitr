@@ -2,17 +2,33 @@
 layout: default
 ---
 {% assign groups = site.groups %}
-{% assign group_tags = "" | split: ',' %}
+{% assign council_group_tags = "" | split: ',' %}
+{% assign council_group_count = 0 %}
+{% assign departmental_group_tags = "" | split: ',' %}
+{% assign departmental_group_count = 0 %}
+{% assign current_count = 0 %}
+{% assign group_content_class = '' %}
 
 <div class="wrapper--group">
 {% for group in groups %}
-	{% assign group_tags = group_tags | push: group.tag %}
-	<div class="g-{{group.tag}} g-group" id="{{group.tag}}">
+	{% if group.type == 'departmental' %}
+		{% assign departmental_group_tags = departmental_group_tags | push: group.tag %}
+		{% assign departmental_group_count = departmental_group_count | plus: 1 %}
+		{% assign current_count = departmental_group_count %}
+		{% assign group_content_class = 'departmental' %}
+	{% elsif group.type == 'council' %}
+		{% assign council_group_tags = council_group_tags | push: group.tag %}
+		{% assign council_group_count = council_group_count | plus: 1 %}
+		{% assign current_count = council_group_count %}
+		{% assign group_content_class = 'council' %}
+	{% endif %}
+
+	<div class="g-{{group.tag}} g-group g-group--{{group_content_class}}" id="{{group.tag}}">
 		<div class="group-front display--flex horizontal-align--center" id="group-front">
 			<div class="front__left-leaf display--flex vertical-align--center horizontal-align--center flex-direction-column">
 				<div class="group__info">
 					<div class="front__paginate">
-						<h2> {{forloop.index}} of {{forloop.length}}
+						<h2> {{current_count}} of <span class="group-count--{{group_content_class}} "></span>
 							<a href="#" class="previous"> < </a>
 							<a href="#" class="next">  > </a>
 						</h2>
@@ -134,4 +150,4 @@ layout: default
 	<div class="arrow-dw display--flex vertical-align--center horizontal-align--center"> &darr; </div>
 </div>
 	
-<script type="text/javascript" id="group-script" src="/scripts/group.js" group-data='{{group_tags | jsonify}}'></script>
+<script type="text/javascript" id="group-script" src="/scripts/group.js" departmental-group-data='{{departmental_group_tags | jsonify}}' council-group-data='{{council_group_tags | jsonify}}'></script>
