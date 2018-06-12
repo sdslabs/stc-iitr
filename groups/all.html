@@ -8,23 +8,64 @@ layout: default
 		<div class="groups__description h1--smaller"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco  </div>
 	</div>
 
-	{% assign groups = site.groups %}
-	<div class="display--flex horizontal-align--space-between group-cards">
-	{% for group in groups %}
-		{% assign isFourMultiple = forloop.index | modulo:4 %}
-		<div class="group-card">
-			<a href="/groups/{{ group.tag }}" class="group-card-hover display--flex horizontal-align--center vertical-align--center">
-				<h2> VIEW MORE </h2>
-			</a>
-			<div class="group-card__name display--flex vertical-align--center"> 
-				<h2> {{ group.name | upcase }} </h2> 
-			</div>
-			<img class="group-card__img" data-echo="../images/{{group.image}}">
+	<div class="group__switcher display--flex"> 
+		<div class="group__type--council h2--large group__type--active">
+			COUNCIL
 		</div>
-		{% if isFourMultiple==0 %}
-			</div>
-			<div class="display--flex horizontal-align--space-between group-cards">
-		{% endif %}
-	{% endfor %}
+		<div class="group__type--departmental h2--large">
+			DEPARTMENTAL	
+		</div>
+	</div>
 
+	<div class="wrapper--group-cards">
+		{% assign groups = site.groups %}
+
+		<div class="groups--council">
+			<div class="display--flex horizontal-align--space-between group-cards">
+			{% assign count = 1 %}
+			{% for group in groups %}
+				{% if group.type == 'council' %}
+					{% assign isFourMultiple = count | modulo:4 %}
+					{% assign count = count | plus: 1 %}
+					<div class="group-card">
+						<a href="/groups/{{ group.tag }}" class="group-card-hover display--flex horizontal-align--center vertical-align--center">
+							<h2> VIEW MORE </h2>
+						</a>
+						<div class="group-card__name display--flex vertical-align--center"> 
+							<h2> {{ group.name | upcase }} </h2> 
+						</div>
+						<img class="group-card__img" data-echo="../images/{{group.image}}">
+					</div>
+					{% if isFourMultiple==0 %}
+						</div>
+						<div class="display--flex horizontal-align--space-between group-cards">
+					{% endif %}
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="groups--departmental display--none">
+			<div class="display--flex horizontal-align--space-between group-cards">
+			{% for group in groups %}
+				{% if group.type == 'departmental' %}
+					{% assign isFourMultiple = forloop.index | modulo:4 %}
+					<div class="group-card">
+						<a href="/groups/{{ group.tag }}" class="group-card-hover display--flex horizontal-align--center vertical-align--center">
+							<h2> VIEW MORE </h2>
+						</a>
+						<div class="group-card__name display--flex vertical-align--center"> 
+							<h2> {{ group.name | upcase }} </h2> 
+						</div>
+						<img class="group-card__img" data-echo="../images/{{group.image}}">
+					</div>
+					{% if isFourMultiple==0 %}
+						</div>
+						<div class="display--flex horizontal-align--space-between group-cards">
+					{% endif %}
+				{% endif %}
+			{% endfor %}	
+		</div>
+	</div>
+	</div>
 </div>

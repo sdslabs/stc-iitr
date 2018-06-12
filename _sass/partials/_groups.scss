@@ -16,69 +16,106 @@
 		line-height: 2.522rem;
  }
 
+ .group__switcher {
+		width: 107.21879999999999rem;
+		margin-bottom: 5.1192rem;
+ }
+ 	.group__type--departmental {
+		font-family: 'Montserrat', sans-serif;
+		margin-right: 3.2705rem;
+		cursor: pointer;
+		color: rgba(44, 44, 44, 0.57);
+ 	}
+
+ 	.group__type--council {
+ 		font-family: 'Montserrat', sans-serif;
+		margin-right: 3.2705rem;	
+		cursor: pointer;
+		color: rgba(44, 44, 44, 0.57);
+ 	}
+
+ 	.group__type--active {
+ 		color: black;
+ 	}
+
  	.group-cards {
 		width: 107.21879999999999rem;
 		margin-bottom: 4.4082rem;
- }
-
-		.group-card {
-			height: 34.4124rem;
-			width: 22.894199999999998rem;
-			position: relative;
-			overflow: hidden;
+	 }
 	
-			&:hover {
+		.wrapper--group-cards {
+			position: relative;
+			width: 107.21879999999999rem;
+		}
+
+		 	.groups--departmental {
+				position: absolute;
+				top: 0;
+		 	}
+
+		 	.groups--council {
+		 		position: absolute;
+		 		top: 0;
+		 	}
+
+				.group-card {
+					height: 34.4124rem;
+					width: 22.894199999999998rem;
+					position: relative;
+					overflow: hidden;
+			
+					&:hover {
+						.group-card-hover {
+							opacity: 1;
+						}
+
+						.group-card__img {
+							filter: blur(1px);
+							transform: scale(1.1, 1.1)
+						}
+
+						.group-card__name {
+							opacity: 0;
+						}
+					}
+				}
+
+					.group-card__img {
+						position: absolute;
+						top:0;
+						margin-left: -50%;
+						height: 34.4124rem;
+						z-index: -1;
+						transition: transform 0.2s ease;
+					}
+
+					.group-card__name {
+						position: absolute;
+						bottom: 2.0619rem;
+						right: 0;
+				 		font-family: 'Gilroy-Bold';
+				 		background-color: $primary-bg-color;
+				 		padding: 0 1.8486rem;
+				 		height: 5.4747rem;
+				 		opacity: 1;
+				 		transition: opacity 0.2s ease;
+					}
+
 				.group-card-hover {
-					opacity: 1;
-				}
-
-				.group-card__img {
-					filter: blur(1px);
-					transform: scale(1.1, 1.1)
-				}
-
-				.group-card__name {
+					position: relative;
+					top:0;
+					left:0;
+					display: flex;
+					background-color: rgba(0,0,0,0.6);
+					height: 100%;
+					width: 100%;
+					font-family: 'Gilroy-Bold';
+					color: white;
 					opacity: 0;
+					transition: opacity 0.2s ease;
+					z-index: 1;
 				}
-			}
-		}
-
-			.group-card__img {
-				position: absolute;
-				top:0;
-				margin-left: -50%;
-				height: 34.4124rem;
-				z-index: -1;
-				transition: transform 0.2s ease;
-			}
-
-			.group-card__name {
-				position: absolute;
-				bottom: 2.0619rem;
-				right: 0;
-		 		font-family: 'Gilroy-Bold';
-		 		background-color: $primary-bg-color;
-		 		padding: 0 1.8486rem;
-		 		height: 5.4747rem;
-		 		opacity: 1;
-		 		transition: opacity 0.2s ease;
-			}
-
-		.group-card-hover {
-			position: relative;
-			top:0;
-			left:0;
-			display: flex;
-			background-color: rgba(0,0,0,0.6);
-			height: 100%;
-			width: 100%;
-			font-family: 'Gilroy-Bold';
-			color: white;
-			opacity: 0;
-			transition: opacity 0.2s ease;
-			z-index: 1;
-		}
-	
+		
 	.scroll-down {
 		position: fixed;
 		bottom: 0;

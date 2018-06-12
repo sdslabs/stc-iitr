@@ -45,5 +45,20 @@ $(document).ready(function(){
 		$('.content__link').eq(i).on('click', i, readMore)
 	}
 
+	/* GROUP SUBSECTION TOGGLE */
+
+	$('.group__type--departmental').click(function() {
+		$('.group__type--departmental').addClass('group__type--active');
+		$('.group__type--council').removeClass('group__type--active');
+		$('.groups--council').addClass('display--none');
+		$('.groups--departmental').removeClass('display--none');
+	});
+
+	$('.group__type--council').click(function() {
+		$('.group__type--council').addClass('group__type--active');
+		$('.group__type--departmental').removeClass('group__type--active');
+		$('.groups--departmental').addClass('display--none');
+		$('.groups--council').removeClass('display--none');
+	});
 	
 });
