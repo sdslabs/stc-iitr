@@ -53,9 +53,9 @@ $(document).ready(function() {
 			if (groups[index] == path){
 				found =	1; 
 				tempURL = '/groups/'+ groups[index]; 
-				if( tempURL != document.location.pathname){ 
-					window.history.pushState(null,null,groups[index]);
-				}
+				// if( tempURL != document.location.pathname){ 
+				// 	window.history.pushState(null,null,groups[index]);
+				// }
 				updateGroup(path, groups);
 				break;
 			}
@@ -63,6 +63,7 @@ $(document).ready(function() {
 
 		if(found == 0){
 			var randomIndex = Math.floor(Math.random()	* groups.length);
+			window.history.replaceState(null,null,groups[randomIndex]);
 			matchGroup(groups[randomIndex], groups);
 		}
 	}
@@ -90,6 +91,7 @@ $(document).ready(function() {
 		for(index in groups){
 			if(groups[index] == currentPath){
 				var nextIndex = (parseInt(index)+1)%groups.length;
+				window.history.pushState(null,null,groups[nextIndex]);
 				matchGroup(groups[nextIndex], groups);
 				break;
 			}
@@ -106,6 +108,7 @@ $(document).ready(function() {
 			if(groups[index] == currentPath){
 				var tempIndex = parseInt(index)-1;
 				var nextIndex = (tempIndex!=-1)?tempIndex:groups.length-1;
+				window.history.pushState(null,null,groups[nextIndex]);
 				matchGroup(groups[nextIndex], groups);
 				break;
 			}
@@ -118,11 +121,16 @@ $(document).ready(function() {
 	// handling changes in states 
 	window.onpopstate = function(){
 		// reload on pop state
-		window.location.href = document.location.href;
+		var new_path = document.location.pathname.split('/')[2];
+		
+		if (council_groups.includes(new_path))
+			updateGroup(new_path, council_groups);
+		else
+			updateGroup(new_path, departmental_groups);
 	}
 
 	if (council_groups.includes(path))
-		matchGroup(path, council_groups)
+		matchGroup(path, council_groups);
 	else
-		matchGroup(path, departmental_groups)
+		matchGroup(path, departmental_groups);
 });

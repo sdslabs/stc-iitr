@@ -11,9 +11,6 @@ $(document).ready(function() {
 			if (open_projects[index] == path){
 				found =	1; 
 				tempURL = '/open_projects/'+ open_projects[index]; 
-				if( tempURL != document.location.pathname){ 
-					window.history.pushState(null,null,open_projects[index]);
-				}
 				updateProject(path);
 				break;
 			}
@@ -21,6 +18,7 @@ $(document).ready(function() {
 
 		if(found == 0){
 			var randomIndex = Math.floor(Math.random()	* open_projects.length);
+			window.history.replaceState(null,null,open_projects[randomIndex]);
 			matchProject(open_projects[randomIndex]);
 		}
 	}
@@ -46,7 +44,7 @@ $(document).ready(function() {
 		for(index in open_projects){
 			if(open_projects[index] == currentPath){
 				var nextIndex = (parseInt(index)+1)%open_projects.length;
-				// console.log(index);
+				window.history.pushState(null,null,open_projects[nextIndex]);
 				matchProject(open_projects[nextIndex]);
 				break;
 			}
@@ -61,7 +59,7 @@ $(document).ready(function() {
 			if(open_projects[index] == currentPath){
 				var tempIndex = parseInt(index)-1;
 				var nextIndex = (tempIndex!=-1)?tempIndex:open_projects.length-1;
-				// console.log(index);
+				window.history.pushState(null,null,open_projects[nextIndex]);
 				matchProject(open_projects[nextIndex]);
 				break;
 			}
@@ -71,8 +69,7 @@ $(document).ready(function() {
 	// handling changes in states 
 
 	window.onpopstate = function(){
-		window.location.href = document.location.href;
-		matchProject(document.location.pathname.split('/')[2]);
+		updateProject(document.location.pathname.split('/')[2]);
 	}
 
 	matchProject(path);
