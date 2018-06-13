@@ -25,22 +25,26 @@
  		margin-top: 13.499rem;
  	}
 
- 		.equipment__head {
-			font-family: 'Montserrat', sans-serif;
-			font-weight: 700;
-			font-size: 2.5rem;
-			margin-bottom: 3.554rem;
- 		}
+	 	.equipment {
+	 		width: 25rem;
+	 	}
 
- 		.equipment__list {
- 		}
+	 		.equipment__head {
+				font-family: 'Montserrat', sans-serif;
+				font-weight: 700;
+				font-size: 2.5rem;
+				margin-bottom: 3.554rem;
+	 		}
 
- 			.equipment__list--item {
- 				&>i {
- 					color: $primary-bg-color;
- 					margin-right: 1.493rem;
- 				}
- 				color: #585858;
- 				font-family: 'Gilroy-Light';
- 				margin-bottom: 2.133rem;
- 			}
+	 		.equipment__list {
+	 		}
+
+	 			.equipment__list--item {
+	 				&>i {
+	 					color: $primary-bg-color;
+	 					margin-right: 1.493rem;
+	 				}
+	 				color: #585858;
+	 				font-family: 'Gilroy-Light';
+	 				margin-bottom: 2.133rem;
+	 			}

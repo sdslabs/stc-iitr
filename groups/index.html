@@ -85,7 +85,7 @@ layout: default
 			{% for project in projects %}
 
 			{% assign isOdd = forloop.index | modulo:2 %}
-			{% if project.group == group.name %}
+			{% if project.group_tag == group.tag %}
 				<div class="g-card display--flex">
 					<div class="g-card__image">
 						<img data-echo="../images/{{project.image}}">
@@ -98,7 +98,7 @@ layout: default
 							{{ project.content }}
 						</div>
 						<div class="g-card__link">
-							<a href="#" class="h2--large"> View Details </a>
+							<a href="{{project.link}}" class="h2--large"> View Details </a>
 						</div>
 					</div>
 				</div>
