@@ -1,4 +1,5 @@
 ---
+type: 'council'
 name: 'Mars'
 excerpt: "lorem ipsum dolor sit amet"
 image: 'main.png'

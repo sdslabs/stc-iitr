@@ -1,4 +1,5 @@
 ---
+type: 'council'
 name: 'Aries'
 excerpt: "lorem ipsum dolor sit amet"
 image: 'achievements1.png'
