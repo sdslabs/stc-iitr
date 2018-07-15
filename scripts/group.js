@@ -69,7 +69,8 @@ $(document).ready(function() {
 	}
 
 	function updateGroup(path, groups){
-		groups.forEach(function(group,index){
+		all_groups = council_groups.concat(departmental_groups);
+		all_groups.forEach(function(group,index){
 			if(group != path){
 				var groupContainer = document.getElementById(group);
 				groupContainer.classList.add('invisible')

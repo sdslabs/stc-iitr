@@ -47,9 +47,11 @@ layout: default
 
 	<div class="groups--departmental display--none">
 			<div class="display--flex horizontal-align--space-between group-cards">
+			{% assign count = 1 %}
 			{% for group in groups %}
 				{% if group.type == 'departmental' %}
-					{% assign isFourMultiple = forloop.index | modulo:4 %}
+					{% assign isFourMultiple = count | modulo:4 %}
+					{% assign count = count | plus: 1 %}
 					<div class="group-card">
 						<a href="/groups/{{ group.tag }}" class="group-card-hover display--flex horizontal-align--center vertical-align--center">
 							<h2> VIEW MORE </h2>

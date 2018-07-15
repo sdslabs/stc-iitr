@@ -50,19 +50,19 @@ layout: default
 							 {{ group.phoneno }}
 						</div>
 						<div class="front__contact--links"> 
-							{% if group.facebook %}
+							{% if group.facebook != "" %}
 							<a href="{{group.facebook}}"> <i class="fa fa-facebook"> </i> </a>
 							{% endif %}
-							{% if group.twitter %}
+							{% if group.twitter != "" %}
 							<a href="{{group.facebook}}"> <i class="fa fa-twitter"> </i> </a>
 							{% endif %}
-							{% if group.instagram %}
+							{% if group.instagram != "" %}
 							<a href="{{group.instagram}}"> <i class="fa fa-instagram"> </i> </a>
 							{% endif %}
-							{% if group.linkedin %}
+							{% if group.linkedin != "" %}
 							<a href="{{group.linkedin}}"> <i class="fa fa-linkedin"> </i> </a>
 							{% endif %}
-							{% if group.portfolio %}
+							{% if group.portfolio != "" %}
 							<a href="{{group.portfolio}}"> <i class="fa fa-window-maximize"> </i> </a>
 							{% endif %}
 						</div>
@@ -82,10 +82,12 @@ layout: default
 			<div class="g-project-row display--flex horizontal-align--space-between">
 
 			{% assign projects = site.projects %}
+			{% assign number = 0 %}
 			{% for project in projects %}
 
-			{% assign isOdd = forloop.index | modulo:2 %}
 			{% if project.group_tag == group.tag %}
+			{% assign number = number | plus: 1 %}
+			{% assign isOdd = number | modulo:2 %}
 				<div class="g-card display--flex">
 					<div class="g-card__image">
 						<img data-echo="../images/{{project.image}}">
@@ -97,9 +99,9 @@ layout: default
 						<div class="g-card__content h3--small">
 							{{ project.content }}
 						</div>
-						<div class="g-card__link">
+						<!-- <div class="g-card__link">
 							<a href="{{project.link}}" class="h2--large"> View Details </a>
-						</div>
+						</div> -->
 					</div>
 				</div>
 				{% if isOdd == 0 %}
@@ -112,7 +114,7 @@ layout: default
 
 			{% assign equipments = group.equipments %}
 			
-			{% if equipments != null %}
+			{% if equipments != "" %}
 				<div class="g-equipment-head">
 					EQUIPMENT
 				</div>
@@ -130,15 +132,17 @@ layout: default
 			{% endif %}
 
 			
-			<div class="g-recruitments-head">
-				RECRUITMENTS 
-			</div>
-			<div class="g-recruitments-content">
-				{{ group.recruitment }} 
-			</div>
-			<div class="g-recruitments-link">
-				<a href="#"> Apply Now </a>
-			</div>
+			{% if group.recruitment != "" or group.recruitment != null %}	
+				<div class="g-recruitments-head">
+					RECRUITMENTS  
+				</div>
+				<div class="g-recruitments-content">
+					{{ group.recruitment }} 
+				</div>
+				<div class="g-recruitments-link">
+					<a href="#"> Apply Now </a>
+				</div>
+			{% endif %}
 		</div>
 	</div>
 

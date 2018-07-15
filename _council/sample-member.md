@@ -1,5 +1,5 @@
 ---
-name: Prof. Nightfury
-description: Lorem ipsum dolor sit ame
-image: main.png
+name: "Vaibhav Garg"
+description: "ArIES Secretary"
+image: demo_council.jpg
 ---
