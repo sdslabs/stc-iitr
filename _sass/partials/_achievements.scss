@@ -13,7 +13,8 @@
 	}	
 
 		.award__info {
-			font-size: 2.25rem;
+			font-size: 1.8rem;
+			line-height: 2.4rem;
 			border-bottom: 1px solid #dcdcdc;
 			width: 92.7144rem;
 			padding: 2.844rem 0;
@@ -25,6 +26,7 @@
 			}
 
 			i {
+				line-height: 2.4rem;
 				color: $primary-bg-color;
 			}
 
@@ -36,9 +38,11 @@
 
 		.achievements__head {
 			width: 92.7144rem;
-			padding:  7.60769rem 0;
+			padding-top:  7.60769rem;
+			padding-bottom: 3.5rem;
 			font-family: Gilroy-Light;
 			color: rgba(0, 0, 0, 0.5);
+			font-size: 2rem;
 		}		
 
 		.achievements__head--awards {
@@ -56,6 +60,7 @@
 		}
 
 		.achievement__card {
+			padding: 2.8rem 0;
 			margin-bottom: 6.68340rem;
 		}
 
@@ -75,9 +80,11 @@
 			}
 
 			.achievement__content {
-				line-height: 2.133rem;
+				line-height: 2.4rem;
+				font-family: Gilroy-Light;
 				color: rgba(0, 0, 0, 0.77);
 				margin-top: 2.844rem;
 				border-left: 3px solid $primary-bg-color;
 				padding-left: 1.8486rem;
+				font-size: 1.8rem;
 			}

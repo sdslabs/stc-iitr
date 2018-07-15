@@ -2,7 +2,7 @@
 title: "BruteDC"
 description: ""
 group_tag: "sds"
-image:  
+image: "demo_project.jpg" 
 link: "#"
 ---
 

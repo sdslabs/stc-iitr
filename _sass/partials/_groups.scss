@@ -63,6 +63,7 @@
 					width: 22.894199999999998rem;
 					position: relative;
 					overflow: hidden;
+					margin-right: 5rem;
 			
 					&:hover {
 						.group-card-hover {
@@ -78,15 +79,24 @@
 							opacity: 0;
 						}
 					}
+
+					&:last-child {
+						margin-right: 0;
+					}
 				}
 
-					.group-card__img {
+					.group-card__img-div {
 						position: absolute;
 						top:0;
-						margin-left: -50%;
 						height: 34.4124rem;
 						z-index: -1;
-						transition: transform 0.2s ease;
+
+						img {
+							height: 100%;
+							width: auto;
+							margin-left: -17%;
+							transition: transform 0.2s ease;
+						}
 					}
 
 					.group-card__name {
@@ -95,10 +105,18 @@
 						right: 0;
 				 		font-family: 'Gilroy-Bold';
 				 		background-color: $primary-bg-color;
-				 		padding: 0 1.8486rem;
+				 		padding-top: 3rem;
+				 		padding-bottom: 3rem;
+				 		padding-right: 1.8rem;
+				 		padding-left: 1.8rem;
 				 		height: 5.4747rem;
 				 		opacity: 1;
+				 		line-height: 2.2rem;
 				 		transition: opacity 0.2s ease;
+
+				 		h2 {
+				 			text-align: right;
+				 		}
 					}
 
 				.group-card-hover {

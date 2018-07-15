@@ -2,7 +2,7 @@
 title: "HPVC"
 description: ""
 group_tag: "asme"
-image: "demo_projec.jpg" 
+image: "demo_project.jpg" 
 link: "#"
 ---
 

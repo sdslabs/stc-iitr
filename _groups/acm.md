@@ -2,7 +2,7 @@
 type: "departmental"
 name: "ACM IIT Roorkee Chapter"
 excerpt: "Association of Computer Machinery"
-image: "demo_group.jpg"
+image: "acm.jpg"
 contact: "Akash Gupta"
 phoneno: "8226050690"
 tag: "acm"
@@ -15,5 +15,5 @@ linkedin: ""
 portfolio: ""
 ---
 
-The IIT Roorkee ACM Student Chapter is an official student body incepted in 2014 under the aegis of Department of Computer Science and Engineering, IIT Roorkee. 
-The chapter organizes a number of events including programming contests, talks by renowned speakers, workshops etc. which gives the students an exposure to the competitive computing world as well as allows them to understand the advancements going on in the computing sphere worldwide.
+It is an official student body incepted in 2014 under the aegis of Department of Computer Science and Engineering, IIT Roorkee. 
+It organizes a number of events including programming contests, talks by renowned speakers, workshops etc. which gives the students an exposure to the competitive computing world as well as allows them to understand the advancements going on in the computing sphere worldwide.

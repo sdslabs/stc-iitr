@@ -2,7 +2,7 @@
 title: "Campus Omegle"
 description: ""
 group_tag: "sds"
-image: "demo_projec.jpg" 
+image: "demo_project.jpg" 
 link: "#"
 ---
 

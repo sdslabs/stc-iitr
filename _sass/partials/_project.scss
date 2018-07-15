@@ -20,7 +20,8 @@
 
 			.op-project__info	{
 				position: absolute;
-				top: 15rem;
+				top: 11rem;
+				margin-left: 2.85rem;
 				width: 45%;
 			}
 
@@ -44,11 +45,13 @@
 					margin-top: 2.84rem;
 
 					h1 {
+						line-height: 4.6rem;
 						font-family: 'Montserrat', sans-serif;
 						font-weight: 900;
 					}
 
 					.op-front__sub-head {
+						line-height: 2rem;
 						color: $primary-bg-color;
 						font-family: 'Gilroy-Light';
 						letter-spacing: 1px;
@@ -59,17 +62,18 @@
 				.op-front__content {
 					@extend %width-left-leaf;
 					font-family: 'Gilroy-Light';
-					font-size: 1.7rem;
+					font-size: 1.4rem;
 					color: #585858;
 					letter-spacing: 1px;
 					line-height: 2.844rem;
-					margin-top: 3.9105rem;
+					margin-top: 2.5105rem;
+					width: 53rem !important;
 				}
 
 				.op-front__know-more {
 					@extend %width-left-leaf;
 					font-family: 'Montserrat', sans-serif;
-					margin-top: 5.972rem;
+					margin-top: 2.5rem;
 
 					a {
 						color: black; 	

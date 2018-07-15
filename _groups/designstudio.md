@@ -2,7 +2,7 @@
 type: "council"
 name: "Design Studio"
 excerpt: ""
-image: "demo_group.jpg"
+image: "designstudio.png"
 contact: "Jayant Mishra"
 phoneno: "8126481212"
 tag: "ds"

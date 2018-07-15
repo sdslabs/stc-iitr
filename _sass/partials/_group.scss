@@ -1,5 +1,5 @@
 %width-left-leaf {
-	width: 48.98789rem;
+	width: 53.98789rem;
 }
 
 .wrapper--group {
@@ -40,7 +40,8 @@
 
 			.group__info {
 				position: absolute;
-				top: 15rem;
+				top: 11rem;
+				margin-left: 2.85rem;
 			}
 
 				.front__paginate {
@@ -63,11 +64,13 @@
 					margin-top: 2.84rem;
 
 					h1 {
+						line-height: 4.6rem;
 						font-family: 'Montserrat', sans-serif;
 						font-weight: 900;
 					}
 
 					.front__sub-head {
+						line-height: 2rem;
 						color: $primary-bg-color;
 						font-family: 'Gilroy-Light';
 						letter-spacing: 1px;
@@ -78,16 +81,17 @@
 				.front__content {
 					@extend %width-left-leaf;
 					font-family: 'Gilroy-Light';
-					font-size: 1.7rem;
+					font-size: 1.4rem;
 					color: #585858;
 					letter-spacing: 1px;
 					line-height: 2.844rem;
-					margin-top: 3.9105rem;
+					margin-top: 2.5105rem;
+					width: 53rem !important;
 				}
 
 				.front__contact {
 					@extend %width-left-leaf;
-					margin-top: 5.688rem;
+					margin-top: 2.5rem;
 				}
 
 					.front__contact--name {
@@ -105,7 +109,7 @@
 
 					.front__contact--links {
 						font-size: 2.7rem;
-						margin-top: 6.9099rem; 
+						margin-top: 3.7rem; 
 						
 						a {
 							text-decoration: none;
@@ -122,8 +126,9 @@
 			overflow: hidden;
 
 			img {
-				margin-left: -50%;
+				margin-left: -15%;
 				height: 99.8vh;
+				width: auto;
 			}
 		}
 
@@ -143,20 +148,29 @@
 			margin-bottom: 7.5366rem;
 		}
 
+		.g-project-row:last-child {
+			margin: 0;
+		}
+
 			.g-card__image {
+				flex: 1;
+
 				img {
 					width: 22.041rem;
 				}
 			}
 
 			.g-card__data {
-				width: 19.197rem;
+				flex: 2;
+				width: 25.197rem;
 				margin-left: 2.2752rem;
 			}
 
 				.g-card__head {
 					font-family: 'Gilroy-Bold';
 					letter-spacing: 1px;
+					line-height: 2.2rem;
+					margin-bottom: 0.7rem;
 				}
 
 				.g-card__content {

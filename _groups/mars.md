@@ -20,5 +20,5 @@ portfolio: "https: //github.com/marsiitr"
 ---
 
 MaRS provides the perfect platform for students to develop their innovative and technical skills such as mechanical, electronics and architectural.
-Over the past few years, this section has focused more on the 'robotics' part, conducting lectures on microcontrollers, sensors, actuators, etc.; conducting workshops. 
-Also, the first year students get a chance to build their bots independently. These bots are then displayed in 'Srishti' ; the Annual Exhibition of Student Technical Club, and attract a lot of appreciation from various professors, and other visitors."
+Over the past years, this section has focused more on the 'robotics' part, conducting lectures on microcontrollers, sensors, actuators, etc.; conducting workshops. 
+Also, the first year students get a chance to build their bots independently and they are displayed in 'Srishti' ; the Annual Exhibition of Student Technical Club, and attract a lot of appreciation from various professors, and other visitors."

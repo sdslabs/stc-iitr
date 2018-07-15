@@ -2,7 +2,7 @@
 type: "council"
 name: "IIT Roorkee Motorsports"
 excerpt: "Formula Style Electric car developer"
-image:  "demo_group.jpg"
+image:  "motorsports.jpg"
 contact: "Harshit Singh"
 phoneno: "8650267812"
 tag: "motorsport"

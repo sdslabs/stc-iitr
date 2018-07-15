@@ -2,7 +2,7 @@
 title: "Plan ET A.R. App"
 description: ""
 group_tag: "ds"
-image: "demo_projec.jpg" 
+image: "demo_project.jpg" 
 link: "#"
 ---
 

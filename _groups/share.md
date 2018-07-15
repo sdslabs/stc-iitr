@@ -2,7 +2,7 @@
 type: "council"
 name: "ShARE-IITR"
 excerpt: "Sharing Analysis of Regional Economies"
-image: "demo_group.jpg"
+image: "share.jpg"
 contact: "Uday Shinghal"
 phoneno: "9997859777"
 tag: "share"

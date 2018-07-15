@@ -2,7 +2,7 @@
 type: "departmental"
 name: "CEC IITR"
 excerpt: "Civil Engineering Consortium"
-image: "demo_group.jpg"
+image: "cec.jpg"
 contact: "Pracheer Mehra"
 phoneno: "7500320832"
 tag: "cec"

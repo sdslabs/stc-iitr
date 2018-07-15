@@ -2,7 +2,7 @@
 type: "council"
 name: "EDC IIT Roorkee"
 excerpt: "Entrepreneurship Developement Cell"
-image: "demo_group.jpg" 
+image: "edc.jpg" 
 contact: "Aayush Gupta"
 phoneno: "8872205522"
 tag: "edc"

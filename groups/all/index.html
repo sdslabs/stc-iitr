@@ -21,7 +21,7 @@ layout: default
 		{% assign groups = site.groups %}
 
 		<div class="groups--council">
-			<div class="display--flex horizontal-align--space-between group-cards">
+			<div class="display--flex group-cards">
 			{% assign count = 1 %}
 			{% for group in groups %}
 				{% if group.type == 'council' %}
@@ -34,11 +34,13 @@ layout: default
 						<div class="group-card__name display--flex vertical-align--center"> 
 							<h2> {{ group.name | upcase }} </h2> 
 						</div>
-						<img class="group-card__img" data-echo="/images/{{group.image}}">
+						<div class="group-card__img-div">
+							<img class="group-card__img" data-echo="/images/{{group.image}}">
+						</div>
 					</div>
 					{% if isFourMultiple==0 %}
 						</div>
-						<div class="display--flex horizontal-align--space-between group-cards">
+						<div class="display--flex group-cards">
 					{% endif %}
 				{% endif %}
 			{% endfor %}
@@ -46,7 +48,7 @@ layout: default
 	</div>
 
 	<div class="groups--departmental display--none">
-			<div class="display--flex horizontal-align--space-between group-cards">
+			<div class="display--flex group-cards">
 			{% assign count = 1 %}
 			{% for group in groups %}
 				{% if group.type == 'departmental' %}
@@ -59,11 +61,13 @@ layout: default
 						<div class="group-card__name display--flex vertical-align--center"> 
 							<h2> {{ group.name | upcase }} </h2> 
 						</div>
-						<img class="group-card__img" data-echo="/images/{{group.image}}">
+						<div class="group-card__img-div">
+							<img class="group-card__img" data-echo="/images/{{group.image}}">
+						</div>
 					</div>
 					{% if isFourMultiple==0 %}
 						</div>
-						<div class="display--flex horizontal-align--space-between group-cards">
+						<div class="display--flex group-cards">
 					{% endif %}
 				{% endif %}
 			{% endfor %}	

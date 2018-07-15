@@ -1,8 +1,8 @@
 ---
-type: "council"
+type: "departmental"
 name: "SAE Chapter IIT Roorkee"
 excerpt: "Society of Automotive Engineers-Chapter IIT Roorkee"
-image: "demo_group.jpg"
+image: "sae.jpg"
 contact: "Debjit Tripathy"
 phoneno: "9437284363"
 tag: "sae"

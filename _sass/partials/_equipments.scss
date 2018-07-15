@@ -25,8 +25,13 @@
  		margin-top: 13.499rem;
  	}
 
+ 		.equipment:last-child {
+ 			margin-right: 0;
+ 		}
+
 	 	.equipment {
 	 		width: 25rem;
+	 		margin-right: 15rem;
 	 	}
 
 	 		.equipment__head {
@@ -43,8 +48,13 @@
 	 				&>i {
 	 					color: $primary-bg-color;
 	 					margin-right: 1.493rem;
+	 					line-height: 2.3rem;
 	 				}
 	 				color: #585858;
 	 				font-family: 'Gilroy-Light';
 	 				margin-bottom: 2.133rem;
+
+	 				&>span {
+	 					line-height: 2.3rem;
+	 				}
 	 			}

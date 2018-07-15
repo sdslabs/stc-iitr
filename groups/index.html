@@ -74,14 +74,25 @@ layout: default
 			</div>
 		</div>
 
+		{% assign projects = site.projects %}
+
 		<div class="group-full display--flex vertical-align--center horizontal-align--center flex-direction-column">
+		
+		{% assign number = 0 %}
+		{% for project in projects %}		
+			{% if project.group_tag == group.tag %}
+				{% assign number = number | plus: 1 %}
+			{% endif %}
+		{% endfor %}
+
+		{% if number != 0 %}	
+		<div class="g-project--wraper">
 			<div class="g-project-head">
 				PROJECTS
 			</div>
 
 			<div class="g-project-row display--flex horizontal-align--space-between">
 
-			{% assign projects = site.projects %}
 			{% assign number = 0 %}
 			{% for project in projects %}
 
@@ -92,7 +103,8 @@ layout: default
 					<div class="g-card__image">
 						<img data-echo="../images/{{project.image}}">
 					</div>
-					<div class="g-card__data display--flex flex-direction-column horizontal-align--space-around">
+
+					<div class="g-card__data display--flex flex-direction-column">
 						<div class="g-card__head h1--smaller">
 							{{ project.title }}
 						</div>
@@ -111,7 +123,8 @@ layout: default
 			{% endif %}
 			{% endfor %}
 			</div>
-
+		</div>	
+		{% endif %}
 			{% assign equipments = group.equipments %}
 			
 			{% if equipments != "" %}
@@ -132,7 +145,7 @@ layout: default
 			{% endif %}
 
 			
-			{% if group.recruitment != "" or group.recruitment != null %}	
+			{% if group.recruitment != "" %}	
 				<div class="g-recruitments-head">
 					RECRUITMENTS  
 				</div>

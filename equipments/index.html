@@ -9,7 +9,7 @@ layout: default
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae unde quas natus? Dolore nam molestiae rerum ipsum, ea molestias dolorem doloremque ut labore eaque quo magnam repellat tenetur eius cum! 
 		</div>
 	</div>
-	<div class="equipments__row  display--flex horizontal-align--space-between">
+	<div class="equipments__row display--flex">
 	{% assign number = 0 %}
 	{% assign groups = site.groups %}
 	{% for group in groups %}
@@ -23,7 +23,7 @@ layout: default
 					</div>
 					<div class="equipment__list">	
 					{% for equipment in equipments %}
-						<div class="equipment__list--item display--flex vertical-align--center"> 
+						<div class="equipment__list--item display--flex"> 
 								<i class="fa fa-circle" aria-hidden="true"></i>
 								<span class="h2--large"> {{ equipment }}</span> 
 						</div>
@@ -32,7 +32,7 @@ layout: default
 			</div>
 			{% if isMultipleThree == 0 %}
 				</div>
-				<div class="equipments__row  display--flex horizontal-align--center horizontal-align--space-between">
+				<div class="equipments__row  display--flex">
 			{% endif %}
 		{% endif %}
 	{% endfor %}

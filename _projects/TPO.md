@@ -2,7 +2,7 @@
 title: "TPO"
 description: ""
 group_tag: "share"
-image: "group_project.jpg" 
+image: "demo_project.jpg" 
 link: "#"
 ---
 
