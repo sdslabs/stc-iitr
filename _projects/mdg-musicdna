@@ -1,0 +1,8 @@
+---
+title: 'MusicDNA'
+description: 'Experience your favourite music in a unique way'
+group: 'Mobile Development Group'
+image: mdg-musicdna.png 
+---
+
+A Music Player for android that makes use of the Visualzer Class for rendering a beautiful DNA (Visualization) of the currently playing music. The Player allows users to play both local music as well as Stream Music directly from SoundCloud. The Player also packs a Powerful Equalizer with BassBoost and Reverb effects.
