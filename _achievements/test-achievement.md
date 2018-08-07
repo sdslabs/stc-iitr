@@ -3,4 +3,4 @@ title: Achievement Title
 image: /images/achievements1.png
 ---
 
-Achievement Content Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia cum totam voluptatum, aut iste? Vel molestias possimus doloremque perspiciatis distinctio culpa nisi blanditiis quod, animi explicabo voluptatum, qui deserunt tenetur!
+IIT Roorkee was the Runner-up at the 6th Inter IIT Tech Meet 2017 held at IIT Madras.
