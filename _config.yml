@@ -10,8 +10,8 @@ title: Students' Technical Council
 email: ankitkataria28@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   The official website of STCIITR.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+baseurl: "/blog" # the subpath of your site, e.g. /blog
+url: "https://blog.sdslabs.co" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
