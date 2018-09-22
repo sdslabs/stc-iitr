@@ -4,14 +4,14 @@ $font-list-otf: Gilroy-Light;
 @each $font in $font-list-ttf {
 	@font-face {
 		font-family: #{$font};
-		src: url('/fonts/#{$font}.ttf') format('truetype');
+		src: url($baseurl + '/fonts/#{$font}.ttf') format('truetype');
 	}
-}
+}	
 
 @each $font in $font-list-otf {
 	@font-face {
 		font-family: #{$font};
-		src: url('/fonts/#{$font}.otf') format('truetype');
+		src: url($baseurl + '/fonts/#{$font}.otf') format('truetype');
 	}
 }
 

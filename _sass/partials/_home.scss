@@ -75,7 +75,7 @@
 		}
 
 	.main-bg {
-		@include dump-bg-image-styles('../../images/main.png');
+		@include dump-bg-image-styles('/images/main.png');
 		height: 100%;
 		width: 100%;
 		position: fixed;

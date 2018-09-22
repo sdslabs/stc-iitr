@@ -1,6 +1,8 @@
 ---
 ---
 
+$baseurl: "{{ site.baseurl }}";
+
 @import 'partials/variables';
 @import 'micro/micro';
 @import 'partials/navbar';
