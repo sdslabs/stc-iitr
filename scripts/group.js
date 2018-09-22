@@ -36,7 +36,8 @@ $(document).ready(function() {
 	/* GROUP CYCLE HANDLING */
 
 	var url = document.location.pathname; 
-	var path = url.split('/')[2];
+	var path = url.split('/');
+	path = path[path.length - 1];
 
 	// array of all group tags
 	var council_groups = JSON.parse($('#group-script').attr('council-group-data'))
@@ -86,7 +87,9 @@ $(document).ready(function() {
 	$('.next').click(function(e){
 		e.preventDefault();
 
-		var currentPath = document.location.pathname.split('/')[2];
+		var currentPath = document.location.pathname.split('/');
+		currentPath = currentPath[currentPath.length - 1];
+		
 		var groups = council_groups.includes(currentPath) ? council_groups : departmental_groups;
 
 		for(index in groups){
@@ -102,7 +105,8 @@ $(document).ready(function() {
 	$('.previous').click(function(e){
 		e.preventDefault();
 
-		var currentPath = document.location.pathname.split('/')[2];
+		var currentPath = document.location.pathname.split('/');
+		currentPath = currentPath[currentPath.length - 1];
 		var groups = council_groups.includes(currentPath) ? council_groups : departmental_groups;
 
 		for(index in groups){

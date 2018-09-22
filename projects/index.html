@@ -37,11 +37,11 @@ layout: default
 				</div>
 			</div>
 			<div class="op-front__image">
-				<img data-echo="../images/{{open_project.image}}">
+				<img data-echo="{{site.baseurl}}/images/{{open_project.image}}">
 			</div>
 		</div>
 	</div>
 {% endfor %}
 </div>	
 
-<script id="open-project-script" type="text/javascript" src="/scripts/open_projects.js" open-project-data='{{open_project_tags | jsonify}}'></script>
+<script id="open-project-script" type="text/javascript" src="{{site.baseurl}}/scripts/open_projects.js" open-project-data='{{open_project_tags | jsonify}}'></script>

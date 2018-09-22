@@ -28,14 +28,14 @@ layout: default
 					{% assign isFourMultiple = count | modulo:4 %}
 					{% assign count = count | plus: 1 %}
 					<div class="group-card">
-						<a href="/groups/{{ group.tag }}" class="group-card-hover display--flex horizontal-align--center vertical-align--center">
+						<a href="{{site.baseurl}}/groups/{{ group.tag }}" class="group-card-hover display--flex horizontal-align--center vertical-align--center">
 							<h2> VIEW MORE </h2>
 						</a>
 						<div class="group-card__name display--flex vertical-align--center"> 
 							<h2> {{ group.name | upcase }} </h2> 
 						</div>
 						<div class="group-card__img-div">
-							<img class="group-card__img" data-echo="/images/{{group.image}}">
+							<img class="group-card__img" data-echo="{{site.baseurl}}/images/{{group.image}}">
 						</div>
 					</div>
 					{% if isFourMultiple==0 %}
@@ -55,14 +55,14 @@ layout: default
 					{% assign isFourMultiple = count | modulo:4 %}
 					{% assign count = count | plus: 1 %}
 					<div class="group-card">
-						<a href="/groups/{{ group.tag }}" class="group-card-hover display--flex horizontal-align--center vertical-align--center">
+						<a href="{{site.baseurl}}/groups/{{ group.tag }}" class="group-card-hover display--flex horizontal-align--center vertical-align--center">
 							<h2> VIEW MORE </h2>
 						</a>
 						<div class="group-card__name display--flex vertical-align--center"> 
 							<h2> {{ group.name | upcase }} </h2> 
 						</div>
 						<div class="group-card__img-div">
-							<img class="group-card__img" data-echo="/images/{{group.image}}">
+							<img class="group-card__img" data-echo="{{site.baseurl}}/images/{{group.image}}">
 						</div>
 					</div>
 					{% if isFourMultiple==0 %}
